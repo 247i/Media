@@ -1,0 +1,10 @@
+HandBrake 1.11.2 (2026060700)
+OS: Microsoft Windows NT 10.0.22631.0
+CPU: 13th Gen Intel(R) Core(TM) i7-13850HX
+Ram: 65220 MB, 
+Screen: 1920x1080
+Temp Dir: D:\All\Media-64\HandBrake\tmp\
+Install Dir: D:\All\Media-64\HandBrake\
+Data Dir: D:\All\Media-64\HandBrake\storage\HandBrake
+
+-------------------------------------------
