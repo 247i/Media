@@ -14,6 +14,8 @@
 // string GetPasswordText()													-> get password text for login dialog
 // string ServerLogin(string User, string Pass)								-> login
 // string ServerLogout()													-> logout
+// string GetWebAccountUrl()							-> login process by WebBrowser
+// string GetWebAccountDomain()							-> transport cookie domain for login
 //------------------------------------------------------------------------------------------------
 // array<string> GetSrcLangs() 												-> get source language
 // array<string> GetDstLangs() 												-> get target language
@@ -33,7 +35,7 @@ string GetVersion()
 
 string GetDesc()
 {
-	return "<a href=\"https://papago.naver.com/\">https://papago.naver.com/</a>";
+	return "<a href=\"https://api.ncloud-docs.com/docs/ai-naver-papagonmt\">https://api.ncloud-docs.com/docs/ai-naver-papagonmt</a>";
 }
 
 string GetLoginTitle()
@@ -93,15 +95,15 @@ array<string> GetDstLangs()
 
 string Translate(string Text, string &in SrcLang, string &in DstLang)
 {		
-	string SendHeader = "X-Naver-Client-Id: " + client_id + "\r\n";
-	SendHeader += "X-Naver-Client-Secret: " + client_secret + "\r\n";
+	string SendHeader = "X-NCP-APIGW-API-KEY-ID: " + client_id + "\r\n";
+	SendHeader += "X-NCP-APIGW-API-KEY: " + client_secret + "\r\n";
 	SendHeader += "Content-Type: application/x-www-form-urlencoded; charset=UTF-8 \r\n";
 	
 	if (SrcLang.length() <= 0) SrcLang = "en";	
 	
 	string Post = "source=" + SrcLang + "&target=" + DstLang + "&text=" + HostUrlEncode(Text);
 	string ret = "";
-	uintptr http = HostOpenHTTP("https://openapi.naver.com/v1/papago/n2mt", UserAgent, SendHeader, Post);
+	uintptr http = HostOpenHTTP("https://naveropenapi.apigw.ntruss.com/nmt/v1/translation", UserAgent, SendHeader, Post);
 	if (http != 0)
 	{
 		string json = HostGetContentHTTP(http);

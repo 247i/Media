@@ -14,6 +14,8 @@
 // string GetPasswordText()													-> get password text for login dialog
 // string ServerLogin(string User, string Pass)								-> login
 // string ServerLogout()													-> logout
+// string GetWebAccountUrl()							-> login process by WebBrowser
+// string GetWebAccountDomain()							-> transport cookie domain for login
 //------------------------------------------------------------------------------------------------
 // array<string> GetSrcLangs() 												-> get source language
 // array<string> GetDstLangs() 												-> get target language
@@ -192,6 +194,8 @@ array<string> GetDstLangs()
 
 string Translate(string Text, string &in SrcLang, string &in DstLang)
 {
+	string UNICODE_RLE = "\u202B";
+	
 	if (SrcLang.length() <= 0) SrcLang = "en";
 	
 	string url = "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=" + SrcLang + "&to=" + DstLang;
@@ -255,6 +259,7 @@ string Translate(string Text, string &in SrcLang, string &in DstLang)
 
 		HostCloseHTTP(http);		
 	}
+	if (DstLang == "fa" || DstLang == "ar" || DstLang == "he") ret = UNICODE_RLE + ret;
 	SrcLang = "UTF8";
 	DstLang = "UTF8";
 	
