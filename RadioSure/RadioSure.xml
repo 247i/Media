@@ -48,9 +48,9 @@
 <Filter_19></Filter_19>
 <StationList>
 <ColumnWidth0>262</ColumnWidth0>
-<ColumnWidth1>21</ColumnWidth1>
-<ColumnWidth2>21</ColumnWidth2>
-<ColumnWidth3>21</ColumnWidth3>
+<ColumnWidth1>75</ColumnWidth1>
+<ColumnWidth2>75</ColumnWidth2>
+<ColumnWidth3>75</ColumnWidth3>
 </StationList>
 <PictureArt>
 <x>2292</x>
@@ -59,7 +59,7 @@
 </PictureArt>
 <LastStationsUpdateCheck>2026/09/27/19/29</LastStationsUpdateCheck>
 <Crossfade>1</Crossfade>
-<Startup>0</Startup>
+<Startup>1</Startup>
 <Autoplay>1</Autoplay>
 <Check_updates>1</Check_updates>
 <MinimizeToTray>1</MinimizeToTray>
