@@ -10,3 +10,4 @@ VLC/uninstall.exe
 VLC/uninstall.log
 OBS-Studio/obs-plugins/64bit/libcef.dll
 /OBS-Studio/obs-plugins/64bit/locales
+/OBS-Studio/data/obs-studio/locale
