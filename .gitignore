@@ -14,3 +14,5 @@ OBS-Studio/obs-plugins/64bit/libcef.dll
 QMMP/.qmmp/qmmp.ini.lock
 QMMP/.qmmp/qmmp.ini
 /QMMP/translations
+/picard/MusicBrainz-Picard/Cache
+PotPlayer/Playlist/PotPlayer.dpl
