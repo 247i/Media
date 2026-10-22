@@ -16,3 +16,5 @@ QMMP/.qmmp/qmmp.ini
 /QMMP/translations
 /picard/MusicBrainz-Picard/Cache
 PotPlayer/Playlist/PotPlayer.dpl
+MBP/MusicBrainz-Picard/sessions/autosave.mbps.gz
+MBP/MusicBrainz-Picard/.Config.ini.synclock
