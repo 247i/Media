@@ -1029,14 +1029,36 @@ GS_DEVICE_OPENGL = _obspython.GS_DEVICE_OPENGL
 
 GS_DEVICE_DIRECT3D_11 = _obspython.GS_DEVICE_DIRECT3D_11
 
+GS_DEVICE_METAL = _obspython.GS_DEVICE_METAL
+
 
 def gs_get_device_name() -> "char const *":
     r"""gs_get_device_name() -> char const *"""
     return _obspython.gs_get_device_name()
 
+def gs_get_driver_version() -> "char const *":
+    r"""gs_get_driver_version() -> char const *"""
+    return _obspython.gs_get_driver_version()
+
+def gs_get_renderer() -> "char const *":
+    r"""gs_get_renderer() -> char const *"""
+    return _obspython.gs_get_renderer()
+
+def gs_get_gpu_dmem() -> "uint64_t":
+    r"""gs_get_gpu_dmem() -> uint64_t"""
+    return _obspython.gs_get_gpu_dmem()
+
+def gs_get_gpu_smem() -> "uint64_t":
+    r"""gs_get_gpu_smem() -> uint64_t"""
+    return _obspython.gs_get_gpu_smem()
+
 def gs_get_device_type() -> "int":
     r"""gs_get_device_type() -> int"""
     return _obspython.gs_get_device_type()
+
+def gs_get_adapter_count() -> "uint32_t":
+    r"""gs_get_adapter_count() -> uint32_t"""
+    return _obspython.gs_get_adapter_count()
 
 def gs_enum_adapters(callback: "bool (*)(void *,char const *,uint32_t)", param: "void *") -> "void":
     r"""
@@ -1510,6 +1532,20 @@ def gs_draw_sprite(tex: "gs_texture_t *", flip: "uint32_t", width: "uint32_t", h
 
     """
     return _obspython.gs_draw_sprite(tex, flip, width, height)
+
+def gs_draw_quadf(tex: "gs_texture_t *", flip: "uint32_t", width: "float", height: "float") -> "void":
+    r"""
+    gs_draw_quadf(tex, flip, width, height)
+
+    Parameters
+    ----------
+    tex: gs_texture_t *
+    flip: uint32_t
+    width: float
+    height: float
+
+    """
+    return _obspython.gs_draw_quadf(tex, flip, width, height)
 
 def gs_draw_sprite_subregion(tex: "gs_texture_t *", flip: "uint32_t", x: "uint32_t", y: "uint32_t", cx: "uint32_t", cy: "uint32_t") -> "void":
     r"""
@@ -2821,6 +2857,36 @@ def gs_nv12_available() -> "bool":
 def gs_p010_available() -> "bool":
     r"""gs_p010_available() -> bool"""
     return _obspython.gs_p010_available()
+
+def gs_texture_create_nv12(tex_y: "gs_texture_t **", tex_uv: "gs_texture_t **", width: "uint32_t", height: "uint32_t", flags: "uint32_t") -> "bool":
+    r"""
+    gs_texture_create_nv12(tex_y, tex_uv, width, height, flags) -> bool
+
+    Parameters
+    ----------
+    tex_y: gs_texture_t **
+    tex_uv: gs_texture_t **
+    width: uint32_t
+    height: uint32_t
+    flags: uint32_t
+
+    """
+    return _obspython.gs_texture_create_nv12(tex_y, tex_uv, width, height, flags)
+
+def gs_texture_create_p010(tex_y: "gs_texture_t **", tex_uv: "gs_texture_t **", width: "uint32_t", height: "uint32_t", flags: "uint32_t") -> "bool":
+    r"""
+    gs_texture_create_p010(tex_y, tex_uv, width, height, flags) -> bool
+
+    Parameters
+    ----------
+    tex_y: gs_texture_t **
+    tex_uv: gs_texture_t **
+    width: uint32_t
+    height: uint32_t
+    flags: uint32_t
+
+    """
+    return _obspython.gs_texture_create_p010(tex_y, tex_uv, width, height, flags)
 
 def gs_is_monitor_hdr(monitor: "void *") -> "bool":
     r"""
@@ -5073,6 +5139,17 @@ def obs_data_get_json(data: "obs_data_t *") -> "char const *":
     """
     return _obspython.obs_data_get_json(data)
 
+def obs_data_get_json_with_defaults(data: "obs_data_t *") -> "char const *":
+    r"""
+    obs_data_get_json_with_defaults(data) -> char const *
+
+    Parameters
+    ----------
+    data: obs_data_t *
+
+    """
+    return _obspython.obs_data_get_json_with_defaults(data)
+
 def obs_data_get_json_pretty(data: "obs_data_t *") -> "char const *":
     r"""
     obs_data_get_json_pretty(data) -> char const *
@@ -5083,6 +5160,17 @@ def obs_data_get_json_pretty(data: "obs_data_t *") -> "char const *":
 
     """
     return _obspython.obs_data_get_json_pretty(data)
+
+def obs_data_get_json_pretty_with_defaults(data: "obs_data_t *") -> "char const *":
+    r"""
+    obs_data_get_json_pretty_with_defaults(data) -> char const *
+
+    Parameters
+    ----------
+    data: obs_data_t *
+
+    """
+    return _obspython.obs_data_get_json_pretty_with_defaults(data)
 
 def obs_data_get_last_json(data: "obs_data_t *") -> "char const *":
     r"""
@@ -5401,6 +5489,19 @@ def obs_data_set_autoselect_obj(data: "obs_data_t *", name: "char const *", obj:
 
     """
     return _obspython.obs_data_set_autoselect_obj(data, name, obj)
+
+def obs_data_set_autoselect_array(data: "obs_data_t *", name: "char const *", arr: "obs_data_array_t *") -> "void":
+    r"""
+    obs_data_set_autoselect_array(data, name, arr)
+
+    Parameters
+    ----------
+    data: obs_data_t *
+    name: char const *
+    arr: obs_data_array_t *
+
+    """
+    return _obspython.obs_data_set_autoselect_array(data, name, arr)
 
 def obs_data_get_string(data: "obs_data_t *", name: "char const *") -> "char const *":
     r"""
@@ -6950,6 +7051,8 @@ OBS_SOURCE_SRGB = _obspython.OBS_SOURCE_SRGB
 
 OBS_SOURCE_CAP_DONT_SHOW_PROPERTIES = _obspython.OBS_SOURCE_CAP_DONT_SHOW_PROPERTIES
 
+OBS_SOURCE_REQUIRES_CANVAS = _obspython.OBS_SOURCE_REQUIRES_CANVAS
+
 class obs_source_audio_mix(object):
     r"""Proxy of C obs_source_audio_mix struct."""
 
@@ -7002,11 +7105,15 @@ OBS_COMBO_FORMAT_FLOAT = _obspython.OBS_COMBO_FORMAT_FLOAT
 
 OBS_COMBO_FORMAT_STRING = _obspython.OBS_COMBO_FORMAT_STRING
 
+OBS_COMBO_FORMAT_BOOL = _obspython.OBS_COMBO_FORMAT_BOOL
+
 OBS_COMBO_TYPE_INVALID = _obspython.OBS_COMBO_TYPE_INVALID
 
 OBS_COMBO_TYPE_EDITABLE = _obspython.OBS_COMBO_TYPE_EDITABLE
 
 OBS_COMBO_TYPE_LIST = _obspython.OBS_COMBO_TYPE_LIST
+
+OBS_COMBO_TYPE_RADIO = _obspython.OBS_COMBO_TYPE_RADIO
 
 OBS_EDITABLE_LIST_TYPE_STRINGS = _obspython.OBS_EDITABLE_LIST_TYPE_STRINGS
 
@@ -7942,6 +8049,19 @@ def obs_property_list_add_float(p: "obs_property_t *", name: "char const *", val
     """
     return _obspython.obs_property_list_add_float(p, name, val)
 
+def obs_property_list_add_bool(p: "obs_property_t *", name: "char const *", val: "bool") -> "size_t":
+    r"""
+    obs_property_list_add_bool(p, name, val) -> size_t
+
+    Parameters
+    ----------
+    p: obs_property_t *
+    name: char const *
+    val: bool
+
+    """
+    return _obspython.obs_property_list_add_bool(p, name, val)
+
 def obs_property_list_insert_string(p: "obs_property_t *", idx: "size_t", name: "char const *", val: "char const *") -> "void":
     r"""
     obs_property_list_insert_string(p, idx, name, val)
@@ -7983,6 +8103,20 @@ def obs_property_list_insert_float(p: "obs_property_t *", idx: "size_t", name: "
 
     """
     return _obspython.obs_property_list_insert_float(p, idx, name, val)
+
+def obs_property_list_insert_bool(p: "obs_property_t *", idx: "size_t", name: "char const *", val: "bool") -> "void":
+    r"""
+    obs_property_list_insert_bool(p, idx, name, val)
+
+    Parameters
+    ----------
+    p: obs_property_t *
+    idx: size_t
+    name: char const *
+    val: bool
+
+    """
+    return _obspython.obs_property_list_insert_bool(p, idx, name, val)
 
 def obs_property_list_item_disable(p: "obs_property_t *", idx: "size_t", disabled: "bool") -> "void":
     r"""
@@ -8079,6 +8213,18 @@ def obs_property_list_item_float(p: "obs_property_t *", idx: "size_t") -> "doubl
 
     """
     return _obspython.obs_property_list_item_float(p, idx)
+
+def obs_property_list_item_bool(p: "obs_property_t *", idx: "size_t") -> "bool":
+    r"""
+    obs_property_list_item_bool(p, idx) -> bool
+
+    Parameters
+    ----------
+    p: obs_property_t *
+    idx: size_t
+
+    """
+    return _obspython.obs_property_list_item_bool(p, idx)
 
 def obs_property_editable_list_type(p: "obs_property_t *") -> "enum obs_editable_list_type":
     r"""
@@ -8811,17 +8957,6 @@ def obs_hotkey_enable_background_press(enable: "bool") -> "void":
     """
     return _obspython.obs_hotkey_enable_background_press(enable)
 
-def obs_hotkey_enable_strict_modifiers(enable: "bool") -> "void":
-    r"""
-    obs_hotkey_enable_strict_modifiers(enable)
-
-    Parameters
-    ----------
-    enable: bool
-
-    """
-    return _obspython.obs_hotkey_enable_strict_modifiers(enable)
-
 def obs_hotkey_set_callback_routing_func(func: "obs_hotkey_callback_router_func", data: "void *") -> "void":
     r"""
     obs_hotkey_set_callback_routing_func(func, data)
@@ -9003,6 +9138,20 @@ OBS_BOUNDS_SCALE_TO_HEIGHT = _obspython.OBS_BOUNDS_SCALE_TO_HEIGHT
 
 OBS_BOUNDS_MAX_ONLY = _obspython.OBS_BOUNDS_MAX_ONLY
 
+OBS_MODULE_INVALID = _obspython.OBS_MODULE_INVALID
+
+OBS_MODULE_ENABLED = _obspython.OBS_MODULE_ENABLED
+
+OBS_MODULE_MISSING = _obspython.OBS_MODULE_MISSING
+
+OBS_MODULE_DISABLED = _obspython.OBS_MODULE_DISABLED
+
+OBS_MODULE_DISABLED_SAFE = _obspython.OBS_MODULE_DISABLED_SAFE
+
+OBS_MODULE_FAILED_TO_OPEN = _obspython.OBS_MODULE_FAILED_TO_OPEN
+
+OBS_MODULE_FAILED_TO_INITIALIZE = _obspython.OBS_MODULE_FAILED_TO_INITIALIZE
+
 class obs_transform_info(object):
     r"""Proxy of C obs_transform_info struct."""
 
@@ -9015,6 +9164,7 @@ class obs_transform_info(object):
     bounds_type: "enum obs_bounds_type" = property(_obspython.obs_transform_info_bounds_type_get, _obspython.obs_transform_info_bounds_type_set, doc=r"""bounds_type""")
     bounds_alignment: "uint32_t" = property(_obspython.obs_transform_info_bounds_alignment_get, _obspython.obs_transform_info_bounds_alignment_set, doc=r"""bounds_alignment""")
     bounds: "struct vec2" = property(_obspython.obs_transform_info_bounds_get, _obspython.obs_transform_info_bounds_set, doc=r"""bounds""")
+    crop_to_bounds: "bool" = property(_obspython.obs_transform_info_crop_to_bounds_get, _obspython.obs_transform_info_crop_to_bounds_set, doc=r"""crop_to_bounds""")
 
     def __init__(self):
         r"""__init__(self) -> obs_transform_info"""
@@ -9376,6 +9526,17 @@ def obs_get_audio_info(oai: "obs_audio_info") -> "bool":
     """
     return _obspython.obs_get_audio_info(oai)
 
+def obs_get_audio_info2(oai2: "obs_audio_info2") -> "bool":
+    r"""
+    obs_get_audio_info2(oai2) -> bool
+
+    Parameters
+    ----------
+    oai2: struct obs_audio_info2 *
+
+    """
+    return _obspython.obs_get_audio_info2(oai2)
+
 def obs_open_module(module: "obs_module_t **", path: "char const *", data_path: "char const *") -> "int":
     r"""
     obs_open_module(module, path, data_path) -> int
@@ -9388,6 +9549,20 @@ def obs_open_module(module: "obs_module_t **", path: "char const *", data_path: 
 
     """
     return _obspython.obs_open_module(module, path, data_path)
+
+def obs_create_disabled_module(module: "obs_module_t **", path: "char const *", data_path: "char const *", state: "enum obs_module_load_state") -> "bool":
+    r"""
+    obs_create_disabled_module(module, path, data_path, state) -> bool
+
+    Parameters
+    ----------
+    module: obs_module_t **
+    path: char const *
+    data_path: char const *
+    state: enum enum obs_module_load_state
+
+    """
+    return _obspython.obs_create_disabled_module(module, path, data_path, state)
 
 def obs_init_module(module: "obs_module_t *") -> "bool":
     r"""
@@ -9410,6 +9585,17 @@ def obs_get_module(name: "char const *") -> "obs_module_t *":
 
     """
     return _obspython.obs_get_module(name)
+
+def obs_get_disabled_module(name: "char const *") -> "obs_module_t *":
+    r"""
+    obs_get_disabled_module(name) -> obs_module_t *
+
+    Parameters
+    ----------
+    name: char const *
+
+    """
+    return _obspython.obs_get_disabled_module(name)
 
 def obs_get_module_lib(module: "obs_module_t *") -> "void *":
     r"""
@@ -9517,6 +9703,54 @@ def obs_get_module_data_path(module: "obs_module_t *") -> "char const *":
     """
     return _obspython.obs_get_module_data_path(module)
 
+def obs_module_add_source(module: "obs_module_t *", id: "char const *") -> "void":
+    r"""
+    obs_module_add_source(module, id)
+
+    Parameters
+    ----------
+    module: obs_module_t *
+    id: char const *
+
+    """
+    return _obspython.obs_module_add_source(module, id)
+
+def obs_module_add_output(module: "obs_module_t *", id: "char const *") -> "void":
+    r"""
+    obs_module_add_output(module, id)
+
+    Parameters
+    ----------
+    module: obs_module_t *
+    id: char const *
+
+    """
+    return _obspython.obs_module_add_output(module, id)
+
+def obs_module_add_encoder(module: "obs_module_t *", id: "char const *") -> "void":
+    r"""
+    obs_module_add_encoder(module, id)
+
+    Parameters
+    ----------
+    module: obs_module_t *
+    id: char const *
+
+    """
+    return _obspython.obs_module_add_encoder(module, id)
+
+def obs_module_add_service(module: "obs_module_t *", id: "char const *") -> "void":
+    r"""
+    obs_module_add_service(module, id)
+
+    Parameters
+    ----------
+    module: obs_module_t *
+    id: char const *
+
+    """
+    return _obspython.obs_module_add_service(module, id)
+
 def obs_enum_modules(callback: "obs_enum_module_callback_t", param: "void *") -> "void":
     r"""
     obs_enum_modules(callback, param)
@@ -9553,6 +9787,28 @@ def obs_find_module_file(module: "obs_module_t *", file: "char const *") -> "cha
 
     """
     return _obspython.obs_find_module_file(module, file)
+
+def obs_add_disabled_module(name: "char const *") -> "void":
+    r"""
+    obs_add_disabled_module(name)
+
+    Parameters
+    ----------
+    name: char const *
+
+    """
+    return _obspython.obs_add_disabled_module(name)
+
+def obs_get_module_allow_disable(name: "char const *") -> "bool":
+    r"""
+    obs_get_module_allow_disable(name) -> bool
+
+    Parameters
+    ----------
+    name: char const *
+
+    """
+    return _obspython.obs_get_module_allow_disable(name)
 
 def obs_module_get_config_path(module: "obs_module_t *", file: "char const *") -> "char *":
     r"""
@@ -9777,6 +10033,18 @@ def obs_enum_services(enum_proc: "bool (*)(void *,obs_service_t *)", param: "voi
     """
     return _obspython.obs_enum_services(enum_proc, param)
 
+def obs_enum_canvases(enum_proc: "bool (*)(void *,obs_canvas_t *)", param: "void *") -> "void":
+    r"""
+    obs_enum_canvases(enum_proc, param)
+
+    Parameters
+    ----------
+    enum_proc: bool (*)(void *,obs_canvas_t *)
+    param: void *
+
+    """
+    return _obspython.obs_enum_canvases(enum_proc, param)
+
 def obs_get_source_by_name(name: "char const *") -> "obs_source_t *":
     r"""
     obs_get_source_by_name(name) -> obs_source_t *
@@ -9853,6 +10121,28 @@ def obs_get_service_by_name(name: "char const *") -> "obs_service_t *":
 
     """
     return _obspython.obs_get_service_by_name(name)
+
+def obs_get_canvas_by_name(name: "char const *") -> "obs_canvas_t *":
+    r"""
+    obs_get_canvas_by_name(name) -> obs_canvas_t *
+
+    Parameters
+    ----------
+    name: char const *
+
+    """
+    return _obspython.obs_get_canvas_by_name(name)
+
+def obs_get_canvas_by_uuid(uuid: "char const *") -> "obs_canvas_t *":
+    r"""
+    obs_get_canvas_by_uuid(uuid) -> obs_canvas_t *
+
+    Parameters
+    ----------
+    uuid: char const *
+
+    """
+    return _obspython.obs_get_canvas_by_uuid(uuid)
 OBS_EFFECT_DEFAULT = _obspython.OBS_EFFECT_DEFAULT
 
 OBS_EFFECT_DEFAULT_RECT = _obspython.OBS_EFFECT_DEFAULT_RECT
@@ -9901,24 +10191,31 @@ def obs_render_main_texture_src_color_only() -> "void":
     r"""obs_render_main_texture_src_color_only()"""
     return _obspython.obs_render_main_texture_src_color_only()
 
-def obs_get_main_texture() -> "gs_texture_t *":
-    r"""obs_get_main_texture() -> gs_texture_t *"""
-    return _obspython.obs_get_main_texture()
-
-def obs_set_master_volume(volume: "float") -> "void":
+def obs_render_canvas_texture(canvas: "obs_canvas_t *") -> "void":
     r"""
-    obs_set_master_volume(volume)
+    obs_render_canvas_texture(canvas)
 
     Parameters
     ----------
-    volume: float
+    canvas: obs_canvas_t *
 
     """
-    return _obspython.obs_set_master_volume(volume)
+    return _obspython.obs_render_canvas_texture(canvas)
 
-def obs_get_master_volume() -> "float":
-    r"""obs_get_master_volume() -> float"""
-    return _obspython.obs_get_master_volume()
+def obs_render_canvas_texture_src_color_only(canvas: "obs_canvas_t *") -> "void":
+    r"""
+    obs_render_canvas_texture_src_color_only(canvas)
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_render_canvas_texture_src_color_only(canvas)
+
+def obs_get_main_texture() -> "gs_texture_t *":
+    r"""obs_get_main_texture() -> gs_texture_t *"""
+    return _obspython.obs_get_main_texture()
 
 def obs_save_source(source: "obs_source_t *") -> "obs_data_t *":
     r"""
@@ -10028,6 +10325,8 @@ OBS_OBJ_TYPE_ENCODER = _obspython.OBS_OBJ_TYPE_ENCODER
 
 OBS_OBJ_TYPE_SERVICE = _obspython.OBS_OBJ_TYPE_SERVICE
 
+OBS_OBJ_TYPE_CANVAS = _obspython.OBS_OBJ_TYPE_CANVAS
+
 
 def obs_obj_get_type(obj: "void *") -> "enum obs_obj_type":
     r"""
@@ -10087,6 +10386,10 @@ def obs_obj_is_private(obj: "void *") -> "bool":
 def obs_audio_monitoring_available() -> "bool":
     r"""obs_audio_monitoring_available() -> bool"""
     return _obspython.obs_audio_monitoring_available()
+
+def obs_reset_audio_monitoring() -> "void":
+    r"""obs_reset_audio_monitoring()"""
+    return _obspython.obs_reset_audio_monitoring()
 
 def obs_enum_audio_monitoring_devices(cb: "obs_enum_audio_device_cb", data: "void *") -> "void":
     r"""
@@ -10160,6 +10463,20 @@ def obs_add_raw_video_callback(conversion: "struct video_scale_info const *", ca
 
     """
     return _obspython.obs_add_raw_video_callback(conversion, callback, param)
+
+def obs_add_raw_video_callback2(conversion: "struct video_scale_info const *", frame_rate_divisor: "uint32_t", callback: "void (*)(void *,struct video_data *)", param: "void *") -> "void":
+    r"""
+    obs_add_raw_video_callback2(conversion, frame_rate_divisor, callback, param)
+
+    Parameters
+    ----------
+    conversion: struct video_scale_info const *
+    frame_rate_divisor: uint32_t
+    callback: void (*)(void *,struct video_data *)
+    param: void *
+
+    """
+    return _obspython.obs_add_raw_video_callback2(conversion, frame_rate_divisor, callback, param)
 
 def obs_remove_raw_video_callback(callback: "void (*)(void *,struct video_data *)", param: "void *") -> "void":
     r"""
@@ -10480,17 +10797,18 @@ def obs_view_remove(view: "obs_view_t *") -> "void":
     """
     return _obspython.obs_view_remove(view)
 
-def obs_view_get_video_info(view: "obs_view_t *", ovi: "obs_video_info") -> "bool":
+def obs_view_enum_video_info(view: "obs_view_t *", enum_proc: "bool (*)(void *,struct obs_video_info *)", param: "void *") -> "void":
     r"""
-    obs_view_get_video_info(view, ovi) -> bool
+    obs_view_enum_video_info(view, enum_proc, param)
 
     Parameters
     ----------
     view: obs_view_t *
-    ovi: struct obs_video_info *
+    enum_proc: bool (*)(void *,struct obs_video_info *)
+    param: void *
 
     """
-    return _obspython.obs_view_get_video_info(view, ovi)
+    return _obspython.obs_view_enum_video_info(view, enum_proc, param)
 
 def obs_display_create(graphics_data: "gs_init_data", backround_color: "uint32_t") -> "obs_display_t *":
     r"""
@@ -10624,6 +10942,28 @@ def obs_source_get_display_name(id: "char const *") -> "char const *":
     """
     return _obspython.obs_source_get_display_name(id)
 
+def obs_source_get_module(id: "char const *") -> "obs_module_t *":
+    r"""
+    obs_source_get_module(id) -> obs_module_t *
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_source_get_module(id)
+
+def obs_source_load_state(id: "char const *") -> "enum obs_module_load_state":
+    r"""
+    obs_source_load_state(id) -> enum obs_module_load_state
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_source_load_state(id)
+
 def obs_source_create(id: "char const *", name: "char const *", settings: "obs_data_t *", hotkey_data: "obs_data_t *") -> "obs_source_t *":
     r"""
     obs_source_create(id, name, settings, hotkey_data) -> obs_source_t *
@@ -10663,17 +11003,6 @@ def obs_source_duplicate(source: "obs_source_t *", desired_name: "char const *",
 
     """
     return _obspython.obs_source_duplicate(source, desired_name, create_private)
-
-def obs_source_addref(source: "obs_source_t *") -> "void":
-    r"""
-    obs_source_addref(source)
-
-    Parameters
-    ----------
-    source: obs_source_t *
-
-    """
-    return _obspython.obs_source_addref(source)
 
 def obs_source_release(source: "obs_source_t *") -> "void":
     r"""
@@ -11061,6 +11390,31 @@ def obs_source_filter_set_order(source: "obs_source_t *", filter: "obs_source_t 
 
     """
     return _obspython.obs_source_filter_set_order(source, filter, movement)
+
+def obs_source_filter_get_index(source: "obs_source_t *", filter: "obs_source_t *") -> "int":
+    r"""
+    obs_source_filter_get_index(source, filter) -> int
+
+    Parameters
+    ----------
+    source: obs_source_t *
+    filter: obs_source_t *
+
+    """
+    return _obspython.obs_source_filter_get_index(source, filter)
+
+def obs_source_filter_set_index(source: "obs_source_t *", filter: "obs_source_t *", index: "size_t") -> "void":
+    r"""
+    obs_source_filter_set_index(source, filter, index)
+
+    Parameters
+    ----------
+    source: obs_source_t *
+    filter: obs_source_t *
+    index: size_t
+
+    """
+    return _obspython.obs_source_filter_set_index(source, filter, index)
 
 def obs_source_get_settings(source: "obs_source_t const *") -> "obs_data_t *":
     r"""
@@ -11595,6 +11949,32 @@ def obs_source_set_push_to_talk_delay(source: "obs_source_t *", delay: "uint64_t
     """
     return _obspython.obs_source_set_push_to_talk_delay(source, delay)
 
+def obs_source_add_audio_pause_callback(source: "obs_source_t *", callback: "signal_callback_t", param: "void *") -> "void":
+    r"""
+    obs_source_add_audio_pause_callback(source, callback, param)
+
+    Parameters
+    ----------
+    source: obs_source_t *
+    callback: signal_callback_t
+    param: void *
+
+    """
+    return _obspython.obs_source_add_audio_pause_callback(source, callback, param)
+
+def obs_source_remove_audio_pause_callback(source: "obs_source_t *", callback: "signal_callback_t", param: "void *") -> "void":
+    r"""
+    obs_source_remove_audio_pause_callback(source, callback, param)
+
+    Parameters
+    ----------
+    source: obs_source_t *
+    callback: signal_callback_t
+    param: void *
+
+    """
+    return _obspython.obs_source_remove_audio_pause_callback(source, callback, param)
+
 def obs_source_add_audio_capture_callback(source: "obs_source_t *", callback: "obs_source_audio_capture_t", param: "void *") -> "void":
     r"""
     obs_source_add_audio_capture_callback(source, callback, param)
@@ -11620,6 +12000,18 @@ def obs_source_remove_audio_capture_callback(source: "obs_source_t *", callback:
 
     """
     return _obspython.obs_source_remove_audio_capture_callback(source, callback, param)
+
+def obs_source_audio_output_capture_device_changed(source: "obs_source_t *", device_id: "char const *") -> "void":
+    r"""
+    obs_source_audio_output_capture_device_changed(source, device_id)
+
+    Parameters
+    ----------
+    source: obs_source_t *
+    device_id: char const *
+
+    """
+    return _obspython.obs_source_audio_output_capture_device_changed(source, device_id)
 
 def obs_source_add_caption_callback(source: "obs_source_t *", callback: "obs_source_caption_t", param: "void *") -> "void":
     r"""
@@ -12399,6 +12791,17 @@ def obs_source_media_ended(source: "obs_source_t *") -> "void":
 
     """
     return _obspython.obs_source_media_ended(source)
+
+def obs_source_get_canvas(source: "obs_source_t const *") -> "obs_canvas_t *":
+    r"""
+    obs_source_get_canvas(source) -> obs_canvas_t *
+
+    Parameters
+    ----------
+    source: obs_source_t const *
+
+    """
+    return _obspython.obs_source_get_canvas(source)
 OBS_TRANSITION_SOURCE_A = _obspython.OBS_TRANSITION_SOURCE_A
 
 OBS_TRANSITION_SOURCE_B = _obspython.OBS_TRANSITION_SOURCE_B
@@ -12570,6 +12973,17 @@ def obs_transition_get_size(transition: "obs_source_t const *", cx: "uint32_t *"
 
     """
     return _obspython.obs_transition_get_size(transition, cx, cy)
+
+def obs_transition_is_active(transition: "obs_source_t *") -> "bool":
+    r"""
+    obs_transition_is_active(transition) -> bool
+
+    Parameters
+    ----------
+    transition: obs_source_t *
+
+    """
+    return _obspython.obs_transition_is_active(transition)
 
 def obs_transition_enable_fixed(transition: "obs_source_t *", enable: "bool", duration_ms: "uint32_t") -> "void":
     r"""
@@ -12750,17 +13164,6 @@ def obs_scene_duplicate(scene: "obs_scene_t *", name: "char const *", type: "enu
     """
     return _obspython.obs_scene_duplicate(scene, name, type)
 
-def obs_scene_addref(scene: "obs_scene_t *") -> "void":
-    r"""
-    obs_scene_addref(scene)
-
-    Parameters
-    ----------
-    scene: obs_scene_t *
-
-    """
-    return _obspython.obs_scene_addref(scene)
-
 def obs_scene_release(scene: "obs_scene_t *") -> "void":
     r"""
     obs_scene_release(scene)
@@ -12917,6 +13320,17 @@ def obs_source_is_scene(source: "obs_source_t const *") -> "bool":
     """
     return _obspython.obs_source_is_scene(source)
 
+def obs_source_type_is_scene(id: "char const *") -> "bool":
+    r"""
+    obs_source_type_is_scene(id) -> bool
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_source_type_is_scene(id)
+
 def obs_scene_add(scene: "obs_scene_t *", source: "obs_source_t *") -> "obs_sceneitem_t *":
     r"""
     obs_scene_add(scene, source) -> obs_sceneitem_t *
@@ -13010,18 +13424,6 @@ def obs_sceneitem_set_id(sceneitem: "obs_sceneitem_t *", id: "int64_t") -> "void
 
     """
     return _obspython.obs_sceneitem_set_id(sceneitem, id)
-
-def obs_scene_sceneitem_from_source(scene: "obs_scene_t *", source: "obs_source_t *") -> "obs_sceneitem_t *":
-    r"""
-    obs_scene_sceneitem_from_source(scene, source) -> obs_sceneitem_t *
-
-    Parameters
-    ----------
-    scene: obs_scene_t *
-    source: obs_source_t *
-
-    """
-    return _obspython.obs_scene_sceneitem_from_source(scene, source)
 
 def obs_scene_save_transform_states(scene: "obs_scene_t *", all_items: "bool") -> "obs_data_t *":
     r"""
@@ -13221,6 +13623,18 @@ def obs_sceneitem_set_bounds_alignment(item: "obs_sceneitem_t *", alignment: "ui
     """
     return _obspython.obs_sceneitem_set_bounds_alignment(item, alignment)
 
+def obs_sceneitem_set_bounds_crop(item: "obs_sceneitem_t *", crop: "bool") -> "void":
+    r"""
+    obs_sceneitem_set_bounds_crop(item, crop)
+
+    Parameters
+    ----------
+    item: obs_sceneitem_t *
+    crop: bool
+
+    """
+    return _obspython.obs_sceneitem_set_bounds_crop(item, crop)
+
 def obs_sceneitem_set_bounds(item: "obs_sceneitem_t *", bounds: "vec2") -> "void":
     r"""
     obs_sceneitem_set_bounds(item, bounds)
@@ -13312,6 +13726,17 @@ def obs_sceneitem_get_bounds_alignment(item: "obs_sceneitem_t const *") -> "uint
     """
     return _obspython.obs_sceneitem_get_bounds_alignment(item)
 
+def obs_sceneitem_get_bounds_crop(item: "obs_sceneitem_t const *") -> "bool":
+    r"""
+    obs_sceneitem_get_bounds_crop(item) -> bool
+
+    Parameters
+    ----------
+    item: obs_sceneitem_t const *
+
+    """
+    return _obspython.obs_sceneitem_get_bounds_crop(item)
+
 def obs_sceneitem_get_bounds(item: "obs_sceneitem_t const *", bounds: "vec2") -> "void":
     r"""
     obs_sceneitem_get_bounds(item, bounds)
@@ -13324,9 +13749,9 @@ def obs_sceneitem_get_bounds(item: "obs_sceneitem_t const *", bounds: "vec2") ->
     """
     return _obspython.obs_sceneitem_get_bounds(item, bounds)
 
-def obs_sceneitem_get_info(item: "obs_sceneitem_t const *", info: "obs_transform_info") -> "void":
+def obs_sceneitem_get_info2(item: "obs_sceneitem_t const *", info: "obs_transform_info") -> "void":
     r"""
-    obs_sceneitem_get_info(item, info)
+    obs_sceneitem_get_info2(item, info)
 
     Parameters
     ----------
@@ -13334,11 +13759,11 @@ def obs_sceneitem_get_info(item: "obs_sceneitem_t const *", info: "obs_transform
     info: struct obs_transform_info *
 
     """
-    return _obspython.obs_sceneitem_get_info(item, info)
+    return _obspython.obs_sceneitem_get_info2(item, info)
 
-def obs_sceneitem_set_info(item: "obs_sceneitem_t *", info: "obs_transform_info") -> "void":
+def obs_sceneitem_set_info2(item: "obs_sceneitem_t *", info: "obs_transform_info") -> "void":
     r"""
-    obs_sceneitem_set_info(item, info)
+    obs_sceneitem_set_info2(item, info)
 
     Parameters
     ----------
@@ -13346,7 +13771,7 @@ def obs_sceneitem_set_info(item: "obs_sceneitem_t *", info: "obs_transform_info"
     info: struct obs_transform_info const *
 
     """
-    return _obspython.obs_sceneitem_set_info(item, info)
+    return _obspython.obs_sceneitem_set_info2(item, info)
 
 def obs_sceneitem_get_draw_transform(item: "obs_sceneitem_t const *", transform: "matrix4") -> "void":
     r"""
@@ -13719,6 +14144,17 @@ def obs_source_is_group(source: "obs_source_t const *") -> "bool":
     """
     return _obspython.obs_source_is_group(source)
 
+def obs_source_type_is_group(id: "char const *") -> "bool":
+    r"""
+    obs_source_type_is_group(id) -> bool
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_source_type_is_group(id)
+
 def obs_scene_is_group(scene: "obs_scene_t const *") -> "bool":
     r"""
     obs_scene_is_group(scene) -> bool
@@ -13786,98 +14222,6 @@ def obs_sceneitem_defer_group_resize_end(item: "obs_sceneitem_t *") -> "void":
 
     """
     return _obspython.obs_sceneitem_defer_group_resize_end(item)
-
-def obs_sceneitem_set_show_transition(item: "obs_sceneitem_t *", transition: "obs_source_t *") -> "void":
-    r"""
-    obs_sceneitem_set_show_transition(item, transition)
-
-    Parameters
-    ----------
-    item: obs_sceneitem_t *
-    transition: obs_source_t *
-
-    """
-    return _obspython.obs_sceneitem_set_show_transition(item, transition)
-
-def obs_sceneitem_set_show_transition_duration(item: "obs_sceneitem_t *", duration_ms: "uint32_t") -> "void":
-    r"""
-    obs_sceneitem_set_show_transition_duration(item, duration_ms)
-
-    Parameters
-    ----------
-    item: obs_sceneitem_t *
-    duration_ms: uint32_t
-
-    """
-    return _obspython.obs_sceneitem_set_show_transition_duration(item, duration_ms)
-
-def obs_sceneitem_get_show_transition(item: "obs_sceneitem_t *") -> "obs_source_t *":
-    r"""
-    obs_sceneitem_get_show_transition(item) -> obs_source_t *
-
-    Parameters
-    ----------
-    item: obs_sceneitem_t *
-
-    """
-    return _obspython.obs_sceneitem_get_show_transition(item)
-
-def obs_sceneitem_get_show_transition_duration(item: "obs_sceneitem_t *") -> "uint32_t":
-    r"""
-    obs_sceneitem_get_show_transition_duration(item) -> uint32_t
-
-    Parameters
-    ----------
-    item: obs_sceneitem_t *
-
-    """
-    return _obspython.obs_sceneitem_get_show_transition_duration(item)
-
-def obs_sceneitem_set_hide_transition(item: "obs_sceneitem_t *", transition: "obs_source_t *") -> "void":
-    r"""
-    obs_sceneitem_set_hide_transition(item, transition)
-
-    Parameters
-    ----------
-    item: obs_sceneitem_t *
-    transition: obs_source_t *
-
-    """
-    return _obspython.obs_sceneitem_set_hide_transition(item, transition)
-
-def obs_sceneitem_set_hide_transition_duration(item: "obs_sceneitem_t *", duration_ms: "uint32_t") -> "void":
-    r"""
-    obs_sceneitem_set_hide_transition_duration(item, duration_ms)
-
-    Parameters
-    ----------
-    item: obs_sceneitem_t *
-    duration_ms: uint32_t
-
-    """
-    return _obspython.obs_sceneitem_set_hide_transition_duration(item, duration_ms)
-
-def obs_sceneitem_get_hide_transition(item: "obs_sceneitem_t *") -> "obs_source_t *":
-    r"""
-    obs_sceneitem_get_hide_transition(item) -> obs_source_t *
-
-    Parameters
-    ----------
-    item: obs_sceneitem_t *
-
-    """
-    return _obspython.obs_sceneitem_get_hide_transition(item)
-
-def obs_sceneitem_get_hide_transition_duration(item: "obs_sceneitem_t *") -> "uint32_t":
-    r"""
-    obs_sceneitem_get_hide_transition_duration(item) -> uint32_t
-
-    Parameters
-    ----------
-    item: obs_sceneitem_t *
-
-    """
-    return _obspython.obs_sceneitem_get_hide_transition_duration(item)
 
 def obs_sceneitem_set_transition(item: "obs_sceneitem_t *", show: "bool", transition: "obs_source_t *") -> "void":
     r"""
@@ -13988,6 +14332,28 @@ def obs_output_get_display_name(id: "char const *") -> "char const *":
     """
     return _obspython.obs_output_get_display_name(id)
 
+def obs_output_get_module(id: "char const *") -> "obs_module_t *":
+    r"""
+    obs_output_get_module(id) -> obs_module_t *
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_output_get_module(id)
+
+def obs_output_load_state(id: "char const *") -> "enum obs_module_load_state":
+    r"""
+    obs_output_load_state(id) -> enum obs_module_load_state
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_output_load_state(id)
+
 def obs_output_create(id: "char const *", name: "char const *", settings: "obs_data_t *", hotkey_data: "obs_data_t *") -> "obs_output_t *":
     r"""
     obs_output_create(id, name, settings, hotkey_data) -> obs_output_t *
@@ -14001,17 +14367,6 @@ def obs_output_create(id: "char const *", name: "char const *", settings: "obs_d
 
     """
     return _obspython.obs_output_create(id, name, settings, hotkey_data)
-
-def obs_output_addref(output: "obs_output_t *") -> "void":
-    r"""
-    obs_output_addref(output)
-
-    Parameters
-    ----------
-    output: obs_output_t *
-
-    """
-    return _obspython.obs_output_addref(output)
 
 def obs_output_release(output: "obs_output_t *") -> "void":
     r"""
@@ -14399,6 +14754,19 @@ def obs_output_set_video_encoder(output: "obs_output_t *", encoder: "obs_encoder
     """
     return _obspython.obs_output_set_video_encoder(output, encoder)
 
+def obs_output_set_video_encoder2(output: "obs_output_t *", encoder: "obs_encoder_t *", idx: "size_t") -> "void":
+    r"""
+    obs_output_set_video_encoder2(output, encoder, idx)
+
+    Parameters
+    ----------
+    output: obs_output_t *
+    encoder: obs_encoder_t *
+    idx: size_t
+
+    """
+    return _obspython.obs_output_set_video_encoder2(output, encoder, idx)
+
 def obs_output_set_audio_encoder(output: "obs_output_t *", encoder: "obs_encoder_t *", idx: "size_t") -> "void":
     r"""
     obs_output_set_audio_encoder(output, encoder, idx)
@@ -14422,6 +14790,18 @@ def obs_output_get_video_encoder(output: "obs_output_t const *") -> "obs_encoder
 
     """
     return _obspython.obs_output_get_video_encoder(output)
+
+def obs_output_get_video_encoder2(output: "obs_output_t const *", idx: "size_t") -> "obs_encoder_t *":
+    r"""
+    obs_output_get_video_encoder2(output, idx) -> obs_encoder_t *
+
+    Parameters
+    ----------
+    output: obs_output_t const *
+    idx: size_t
+
+    """
+    return _obspython.obs_output_get_video_encoder2(output, idx)
 
 def obs_output_get_audio_encoder(output: "obs_output_t const *", idx: "size_t") -> "obs_encoder_t *":
     r"""
@@ -14517,6 +14897,20 @@ def obs_output_set_preferred_size(output: "obs_output_t *", width: "uint32_t", h
     """
     return _obspython.obs_output_set_preferred_size(output, width, height)
 
+def obs_output_set_preferred_size2(output: "obs_output_t *", width: "uint32_t", height: "uint32_t", idx: "size_t") -> "void":
+    r"""
+    obs_output_set_preferred_size2(output, width, height, idx)
+
+    Parameters
+    ----------
+    output: obs_output_t *
+    width: uint32_t
+    height: uint32_t
+    idx: size_t
+
+    """
+    return _obspython.obs_output_set_preferred_size2(output, width, height, idx)
+
 def obs_output_get_width(output: "obs_output_t const *") -> "uint32_t":
     r"""
     obs_output_get_width(output) -> uint32_t
@@ -14528,6 +14922,18 @@ def obs_output_get_width(output: "obs_output_t const *") -> "uint32_t":
     """
     return _obspython.obs_output_get_width(output)
 
+def obs_output_get_width2(output: "obs_output_t const *", idx: "size_t") -> "uint32_t":
+    r"""
+    obs_output_get_width2(output, idx) -> uint32_t
+
+    Parameters
+    ----------
+    output: obs_output_t const *
+    idx: size_t
+
+    """
+    return _obspython.obs_output_get_width2(output, idx)
+
 def obs_output_get_height(output: "obs_output_t const *") -> "uint32_t":
     r"""
     obs_output_get_height(output) -> uint32_t
@@ -14538,6 +14944,18 @@ def obs_output_get_height(output: "obs_output_t const *") -> "uint32_t":
 
     """
     return _obspython.obs_output_get_height(output)
+
+def obs_output_get_height2(output: "obs_output_t const *", idx: "size_t") -> "uint32_t":
+    r"""
+    obs_output_get_height2(output, idx) -> uint32_t
+
+    Parameters
+    ----------
+    output: obs_output_t const *
+    idx: size_t
+
+    """
+    return _obspython.obs_output_get_height2(output, idx)
 
 def obs_output_get_id(output: "obs_output_t const *") -> "char const *":
     r"""
@@ -14734,6 +15152,45 @@ def obs_get_output_supported_audio_codecs(id: "char const *") -> "char const *":
     """
     return _obspython.obs_get_output_supported_audio_codecs(id)
 
+def obs_output_add_packet_callback(output: "obs_output_t *", packet_cb: "void (*)(obs_output_t *,struct encoder_packet *,struct encoder_packet_time *,void *)", param: "void *") -> "void":
+    r"""
+    obs_output_add_packet_callback(output, packet_cb, param)
+
+    Parameters
+    ----------
+    output: obs_output_t *
+    packet_cb: void (*)(obs_output_t *,struct encoder_packet *,struct encoder_packet_time *,void *)
+    param: void *
+
+    """
+    return _obspython.obs_output_add_packet_callback(output, packet_cb, param)
+
+def obs_output_remove_packet_callback(output: "obs_output_t *", packet_cb: "void (*)(obs_output_t *,struct encoder_packet *,struct encoder_packet_time *,void *)", param: "void *") -> "void":
+    r"""
+    obs_output_remove_packet_callback(output, packet_cb, param)
+
+    Parameters
+    ----------
+    output: obs_output_t *
+    packet_cb: void (*)(obs_output_t *,struct encoder_packet *,struct encoder_packet_time *,void *)
+    param: void *
+
+    """
+    return _obspython.obs_output_remove_packet_callback(output, packet_cb, param)
+
+def obs_output_set_reconnect_callback(output: "obs_output_t *", reconnect_cb: "bool (*)(void *,obs_output_t *,int)", param: "void *") -> "void":
+    r"""
+    obs_output_set_reconnect_callback(output, reconnect_cb, param)
+
+    Parameters
+    ----------
+    output: obs_output_t *
+    reconnect_cb: bool (*)(void *,obs_output_t *,int)
+    param: void *
+
+    """
+    return _obspython.obs_output_set_reconnect_callback(output, reconnect_cb, param)
+
 def obs_output_get_type_data(output: "obs_output_t *") -> "void *":
     r"""
     obs_output_get_type_data(output) -> void *
@@ -14861,6 +15318,28 @@ def obs_encoder_get_display_name(id: "char const *") -> "char const *":
     """
     return _obspython.obs_encoder_get_display_name(id)
 
+def obs_encoder_get_module(id: "char const *") -> "obs_module_t *":
+    r"""
+    obs_encoder_get_module(id) -> obs_module_t *
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_encoder_get_module(id)
+
+def obs_encoder_load_state(id: "char const *") -> "enum obs_module_load_state":
+    r"""
+    obs_encoder_load_state(id) -> enum obs_module_load_state
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_encoder_load_state(id)
+
 def obs_video_encoder_create(id: "char const *", name: "char const *", settings: "obs_data_t *", hotkey_data: "obs_data_t *") -> "obs_encoder_t *":
     r"""
     obs_video_encoder_create(id, name, settings, hotkey_data) -> obs_encoder_t *
@@ -14889,17 +15368,6 @@ def obs_audio_encoder_create(id: "char const *", name: "char const *", settings:
 
     """
     return _obspython.obs_audio_encoder_create(id, name, settings, mixer_idx, hotkey_data)
-
-def obs_encoder_addref(encoder: "obs_encoder_t *") -> "void":
-    r"""
-    obs_encoder_addref(encoder)
-
-    Parameters
-    ----------
-    encoder: obs_encoder_t *
-
-    """
-    return _obspython.obs_encoder_addref(encoder)
 
 def obs_encoder_release(encoder: "obs_encoder_t *") -> "void":
     r"""
@@ -15059,6 +15527,88 @@ def obs_encoder_set_scaled_size(encoder: "obs_encoder_t *", width: "uint32_t", h
     """
     return _obspython.obs_encoder_set_scaled_size(encoder, width, height)
 
+def obs_encoder_set_gpu_scale_type(encoder: "obs_encoder_t *", gpu_scale_type: "enum obs_scale_type") -> "void":
+    r"""
+    obs_encoder_set_gpu_scale_type(encoder, gpu_scale_type)
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+    gpu_scale_type: enum enum obs_scale_type
+
+    """
+    return _obspython.obs_encoder_set_gpu_scale_type(encoder, gpu_scale_type)
+
+def obs_encoder_set_frame_rate_divisor(encoder: "obs_encoder_t *", divisor: "uint32_t") -> "bool":
+    r"""
+    obs_encoder_set_frame_rate_divisor(encoder, divisor) -> bool
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+    divisor: uint32_t
+
+    """
+    return _obspython.obs_encoder_set_frame_rate_divisor(encoder, divisor)
+
+def obs_encoder_add_roi(encoder: "obs_encoder_t *", roi: "struct obs_encoder_roi const *") -> "bool":
+    r"""
+    obs_encoder_add_roi(encoder, roi) -> bool
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+    roi: struct obs_encoder_roi const *
+
+    """
+    return _obspython.obs_encoder_add_roi(encoder, roi)
+
+def obs_encoder_has_roi(encoder: "obs_encoder_t const *") -> "bool":
+    r"""
+    obs_encoder_has_roi(encoder) -> bool
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+
+    """
+    return _obspython.obs_encoder_has_roi(encoder)
+
+def obs_encoder_clear_roi(encoder: "obs_encoder_t *") -> "void":
+    r"""
+    obs_encoder_clear_roi(encoder)
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+
+    """
+    return _obspython.obs_encoder_clear_roi(encoder)
+
+def obs_encoder_enum_roi(encoder: "obs_encoder_t *", enum_proc: "void (*)(void *,struct obs_encoder_roi *)", param: "void *") -> "void":
+    r"""
+    obs_encoder_enum_roi(encoder, enum_proc, param)
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+    enum_proc: void (*)(void *,struct obs_encoder_roi *)
+    param: void *
+
+    """
+    return _obspython.obs_encoder_enum_roi(encoder, enum_proc, param)
+
+def obs_encoder_get_roi_increment(encoder: "obs_encoder_t const *") -> "uint32_t":
+    r"""
+    obs_encoder_get_roi_increment(encoder) -> uint32_t
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+
+    """
+    return _obspython.obs_encoder_get_roi_increment(encoder)
+
 def obs_encoder_scaling_enabled(encoder: "obs_encoder_t const *") -> "bool":
     r"""
     obs_encoder_scaling_enabled(encoder) -> bool
@@ -15092,6 +15642,50 @@ def obs_encoder_get_height(encoder: "obs_encoder_t const *") -> "uint32_t":
     """
     return _obspython.obs_encoder_get_height(encoder)
 
+def obs_encoder_gpu_scaling_enabled(encoder: "obs_encoder_t *") -> "bool":
+    r"""
+    obs_encoder_gpu_scaling_enabled(encoder) -> bool
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+
+    """
+    return _obspython.obs_encoder_gpu_scaling_enabled(encoder)
+
+def obs_encoder_get_scale_type(encoder: "obs_encoder_t *") -> "enum obs_scale_type":
+    r"""
+    obs_encoder_get_scale_type(encoder) -> enum obs_scale_type
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+
+    """
+    return _obspython.obs_encoder_get_scale_type(encoder)
+
+def obs_encoder_get_frame_rate_divisor(encoder: "obs_encoder_t const *") -> "uint32_t":
+    r"""
+    obs_encoder_get_frame_rate_divisor(encoder) -> uint32_t
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+
+    """
+    return _obspython.obs_encoder_get_frame_rate_divisor(encoder)
+
+def obs_encoder_get_encoded_frames(encoder: "obs_encoder_t const *") -> "uint32_t":
+    r"""
+    obs_encoder_get_encoded_frames(encoder) -> uint32_t
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+
+    """
+    return _obspython.obs_encoder_get_encoded_frames(encoder)
+
 def obs_encoder_get_sample_rate(encoder: "obs_encoder_t const *") -> "uint32_t":
     r"""
     obs_encoder_get_sample_rate(encoder) -> uint32_t
@@ -15113,6 +15707,28 @@ def obs_encoder_get_frame_size(encoder: "obs_encoder_t const *") -> "size_t":
 
     """
     return _obspython.obs_encoder_get_frame_size(encoder)
+
+def obs_encoder_get_mixer_index(encoder: "obs_encoder_t const *") -> "size_t":
+    r"""
+    obs_encoder_get_mixer_index(encoder) -> size_t
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+
+    """
+    return _obspython.obs_encoder_get_mixer_index(encoder)
+
+def obs_encoder_get_priming_samples(encoder: "obs_encoder_t const *") -> "uint32_t":
+    r"""
+    obs_encoder_get_priming_samples(encoder) -> uint32_t
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+
+    """
+    return _obspython.obs_encoder_get_priming_samples(encoder)
 
 def obs_encoder_set_preferred_video_format(encoder: "obs_encoder_t *", format: "enum video_format") -> "void":
     r"""
@@ -15136,6 +15752,52 @@ def obs_encoder_get_preferred_video_format(encoder: "obs_encoder_t const *") -> 
 
     """
     return _obspython.obs_encoder_get_preferred_video_format(encoder)
+
+def obs_encoder_set_preferred_color_space(encoder: "obs_encoder_t *", colorspace: "enum video_colorspace") -> "void":
+    r"""
+    obs_encoder_set_preferred_color_space(encoder, colorspace)
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+    colorspace: enum enum video_colorspace
+
+    """
+    return _obspython.obs_encoder_set_preferred_color_space(encoder, colorspace)
+
+def obs_encoder_get_preferred_color_space(encoder: "obs_encoder_t const *") -> "enum video_colorspace":
+    r"""
+    obs_encoder_get_preferred_color_space(encoder) -> enum video_colorspace
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+
+    """
+    return _obspython.obs_encoder_get_preferred_color_space(encoder)
+
+def obs_encoder_set_preferred_range(encoder: "obs_encoder_t *", range: "enum video_range_type") -> "void":
+    r"""
+    obs_encoder_set_preferred_range(encoder, range)
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+    range: enum enum video_range_type
+
+    """
+    return _obspython.obs_encoder_set_preferred_range(encoder, range)
+
+def obs_encoder_get_preferred_range(encoder: "obs_encoder_t const *") -> "enum video_range_type":
+    r"""
+    obs_encoder_get_preferred_range(encoder) -> enum video_range_type
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+
+    """
+    return _obspython.obs_encoder_get_preferred_range(encoder)
 
 def obs_encoder_defaults(id: "char const *") -> "obs_data_t *":
     r"""
@@ -15251,6 +15913,29 @@ def obs_encoder_video(encoder: "obs_encoder_t const *") -> "video_t *":
 
     """
     return _obspython.obs_encoder_video(encoder)
+
+def obs_encoder_parent_video(encoder: "obs_encoder_t const *") -> "video_t *":
+    r"""
+    obs_encoder_parent_video(encoder) -> video_t *
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+
+    """
+    return _obspython.obs_encoder_parent_video(encoder)
+
+def obs_encoder_video_tex_active(encoder: "obs_encoder_t const *", format: "enum video_format") -> "bool":
+    r"""
+    obs_encoder_video_tex_active(encoder, format) -> bool
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t const *
+    format: enum enum video_format
+
+    """
+    return _obspython.obs_encoder_video_tex_active(encoder, format)
 
 def obs_encoder_audio(encoder: "obs_encoder_t const *") -> "audio_t *":
     r"""
@@ -15398,6 +16083,33 @@ def obs_encoder_get_pause_offset(encoder: "obs_encoder_t const *") -> "uint64_t"
     """
     return _obspython.obs_encoder_get_pause_offset(encoder)
 
+def obs_encoder_set_group(encoder: "obs_encoder_t *", group: "obs_encoder_group_t *") -> "bool":
+    r"""
+    obs_encoder_set_group(encoder, group) -> bool
+
+    Parameters
+    ----------
+    encoder: obs_encoder_t *
+    group: obs_encoder_group_t *
+
+    """
+    return _obspython.obs_encoder_set_group(encoder, group)
+
+def obs_encoder_group_create() -> "obs_encoder_group_t *":
+    r"""obs_encoder_group_create() -> obs_encoder_group_t *"""
+    return _obspython.obs_encoder_group_create()
+
+def obs_encoder_group_destroy(group: "obs_encoder_group_t *") -> "void":
+    r"""
+    obs_encoder_group_destroy(group)
+
+    Parameters
+    ----------
+    group: obs_encoder_group_t *
+
+    """
+    return _obspython.obs_encoder_group_destroy(group)
+
 def obs_service_get_display_name(id: "char const *") -> "char const *":
     r"""
     obs_service_get_display_name(id) -> char const *
@@ -15408,6 +16120,28 @@ def obs_service_get_display_name(id: "char const *") -> "char const *":
 
     """
     return _obspython.obs_service_get_display_name(id)
+
+def obs_service_get_module(id: "char const *") -> "obs_module_t *":
+    r"""
+    obs_service_get_module(id) -> obs_module_t *
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_service_get_module(id)
+
+def obs_service_load_state(id: "char const *") -> "enum obs_module_load_state":
+    r"""
+    obs_service_load_state(id) -> enum obs_module_load_state
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_service_load_state(id)
 
 def obs_service_create(id: "char const *", name: "char const *", settings: "obs_data_t *", hotkey_data: "obs_data_t *") -> "obs_service_t *":
     r"""
@@ -15435,17 +16169,6 @@ def obs_service_create_private(id: "char const *", name: "char const *", setting
 
     """
     return _obspython.obs_service_create_private(id, name, settings)
-
-def obs_service_addref(service: "obs_service_t *") -> "void":
-    r"""
-    obs_service_addref(service)
-
-    Parameters
-    ----------
-    service: obs_service_t *
-
-    """
-    return _obspython.obs_service_addref(service)
 
 def obs_service_release(service: "obs_service_t *") -> "void":
     r"""
@@ -15603,50 +16326,6 @@ def obs_service_get_settings(service: "obs_service_t const *") -> "obs_data_t *"
     """
     return _obspython.obs_service_get_settings(service)
 
-def obs_service_get_url(service: "obs_service_t const *") -> "char const *":
-    r"""
-    obs_service_get_url(service) -> char const *
-
-    Parameters
-    ----------
-    service: obs_service_t const *
-
-    """
-    return _obspython.obs_service_get_url(service)
-
-def obs_service_get_key(service: "obs_service_t const *") -> "char const *":
-    r"""
-    obs_service_get_key(service) -> char const *
-
-    Parameters
-    ----------
-    service: obs_service_t const *
-
-    """
-    return _obspython.obs_service_get_key(service)
-
-def obs_service_get_username(service: "obs_service_t const *") -> "char const *":
-    r"""
-    obs_service_get_username(service) -> char const *
-
-    Parameters
-    ----------
-    service: obs_service_t const *
-
-    """
-    return _obspython.obs_service_get_username(service)
-
-def obs_service_get_password(service: "obs_service_t const *") -> "char const *":
-    r"""
-    obs_service_get_password(service) -> char const *
-
-    Parameters
-    ----------
-    service: obs_service_t const *
-
-    """
-    return _obspython.obs_service_get_password(service)
-
 def obs_service_apply_encoder_settings(service: "obs_service_t *", video_encoder_settings: "obs_data_t *", audio_encoder_settings: "obs_data_t *") -> "void":
     r"""
     obs_service_apply_encoder_settings(service, video_encoder_settings, audio_encoder_settings)
@@ -15741,17 +16420,6 @@ def obs_service_get_supported_audio_codecs(service: "obs_service_t const *") -> 
 
     """
     return _obspython.obs_service_get_supported_audio_codecs(service)
-
-def obs_service_get_output_type(service: "obs_service_t const *") -> "char const *":
-    r"""
-    obs_service_get_output_type(service) -> char const *
-
-    Parameters
-    ----------
-    service: obs_service_t const *
-
-    """
-    return _obspython.obs_service_get_output_type(service)
 
 def obs_service_get_protocol(service: "obs_service_t const *") -> "char const *":
     r"""
@@ -15869,6 +16537,394 @@ def obs_source_get_icon_type(id: "char const *") -> "enum obs_icon_type":
 
     """
     return _obspython.obs_source_get_icon_type(id)
+
+def obs_source_get_dark_icon(id: "char const *") -> "char const *":
+    r"""
+    obs_source_get_dark_icon(id) -> char const *
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_source_get_dark_icon(id)
+
+def obs_source_get_light_icon(id: "char const *") -> "char const *":
+    r"""
+    obs_source_get_light_icon(id) -> char const *
+
+    Parameters
+    ----------
+    id: char const *
+
+    """
+    return _obspython.obs_source_get_light_icon(id)
+MAIN = _obspython.MAIN
+
+ACTIVATE = _obspython.ACTIVATE
+
+MIX_AUDIO = _obspython.MIX_AUDIO
+
+SCENE_REF = _obspython.SCENE_REF
+
+EPHEMERAL = _obspython.EPHEMERAL
+
+PROGRAM = _obspython.PROGRAM
+
+PREVIEW = _obspython.PREVIEW
+
+DEVICE = _obspython.DEVICE
+
+
+def obs_get_main_canvas() -> "obs_canvas_t *":
+    r"""obs_get_main_canvas() -> obs_canvas_t *"""
+    return _obspython.obs_get_main_canvas()
+
+def obs_canvas_create(name: "char const *", ovi: "obs_video_info", flags: "uint32_t") -> "obs_canvas_t *":
+    r"""
+    obs_canvas_create(name, ovi, flags) -> obs_canvas_t *
+
+    Parameters
+    ----------
+    name: char const *
+    ovi: struct obs_video_info *
+    flags: uint32_t
+
+    """
+    return _obspython.obs_canvas_create(name, ovi, flags)
+
+def obs_canvas_create_private(name: "char const *", ovi: "obs_video_info", flags: "uint32_t") -> "obs_canvas_t *":
+    r"""
+    obs_canvas_create_private(name, ovi, flags) -> obs_canvas_t *
+
+    Parameters
+    ----------
+    name: char const *
+    ovi: struct obs_video_info *
+    flags: uint32_t
+
+    """
+    return _obspython.obs_canvas_create_private(name, ovi, flags)
+
+def obs_canvas_remove(canvas: "obs_canvas_t *") -> "void":
+    r"""
+    obs_canvas_remove(canvas)
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_remove(canvas)
+
+def obs_canvas_removed(canvas: "obs_canvas_t *") -> "bool":
+    r"""
+    obs_canvas_removed(canvas) -> bool
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_removed(canvas)
+
+def obs_canvas_set_name(canvas: "obs_canvas_t *", name: "char const *") -> "void":
+    r"""
+    obs_canvas_set_name(canvas, name)
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+    name: char const *
+
+    """
+    return _obspython.obs_canvas_set_name(canvas, name)
+
+def obs_canvas_get_name(canvas: "obs_canvas_t const *") -> "char const *":
+    r"""
+    obs_canvas_get_name(canvas) -> char const *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t const *
+
+    """
+    return _obspython.obs_canvas_get_name(canvas)
+
+def obs_canvas_get_uuid(canvas: "obs_canvas_t const *") -> "char const *":
+    r"""
+    obs_canvas_get_uuid(canvas) -> char const *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t const *
+
+    """
+    return _obspython.obs_canvas_get_uuid(canvas)
+
+def obs_canvas_get_flags(canvas: "obs_canvas_t const *") -> "uint32_t":
+    r"""
+    obs_canvas_get_flags(canvas) -> uint32_t
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t const *
+
+    """
+    return _obspython.obs_canvas_get_flags(canvas)
+
+def obs_save_canvas(source: "obs_canvas_t *") -> "obs_data_t *":
+    r"""
+    obs_save_canvas(source) -> obs_data_t *
+
+    Parameters
+    ----------
+    source: obs_canvas_t *
+
+    """
+    return _obspython.obs_save_canvas(source)
+
+def obs_load_canvas(data: "obs_data_t *") -> "obs_canvas_t *":
+    r"""
+    obs_load_canvas(data) -> obs_canvas_t *
+
+    Parameters
+    ----------
+    data: obs_data_t *
+
+    """
+    return _obspython.obs_load_canvas(data)
+
+def obs_canvas_get_ref(canvas: "obs_canvas_t *") -> "obs_canvas_t *":
+    r"""
+    obs_canvas_get_ref(canvas) -> obs_canvas_t *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_get_ref(canvas)
+
+def obs_canvas_release(canvas: "obs_canvas_t *") -> "void":
+    r"""
+    obs_canvas_release(canvas)
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_release(canvas)
+
+def obs_weak_canvas_addref(weak: "obs_weak_canvas_t *") -> "void":
+    r"""
+    obs_weak_canvas_addref(weak)
+
+    Parameters
+    ----------
+    weak: obs_weak_canvas_t *
+
+    """
+    return _obspython.obs_weak_canvas_addref(weak)
+
+def obs_weak_canvas_release(weak: "obs_weak_canvas_t *") -> "void":
+    r"""
+    obs_weak_canvas_release(weak)
+
+    Parameters
+    ----------
+    weak: obs_weak_canvas_t *
+
+    """
+    return _obspython.obs_weak_canvas_release(weak)
+
+def obs_canvas_get_weak_canvas(canvas: "obs_canvas_t *") -> "obs_weak_canvas_t *":
+    r"""
+    obs_canvas_get_weak_canvas(canvas) -> obs_weak_canvas_t *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_get_weak_canvas(canvas)
+
+def obs_weak_canvas_get_canvas(weak: "obs_weak_canvas_t *") -> "obs_canvas_t *":
+    r"""
+    obs_weak_canvas_get_canvas(weak) -> obs_canvas_t *
+
+    Parameters
+    ----------
+    weak: obs_weak_canvas_t *
+
+    """
+    return _obspython.obs_weak_canvas_get_canvas(weak)
+
+def obs_canvas_get_signal_handler(canvas: "obs_canvas_t *") -> "signal_handler_t *":
+    r"""
+    obs_canvas_get_signal_handler(canvas) -> signal_handler_t *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_get_signal_handler(canvas)
+
+def obs_canvas_set_channel(canvas: "obs_canvas_t *", channel: "uint32_t", source: "obs_source_t *") -> "void":
+    r"""
+    obs_canvas_set_channel(canvas, channel, source)
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+    channel: uint32_t
+    source: obs_source_t *
+
+    """
+    return _obspython.obs_canvas_set_channel(canvas, channel, source)
+
+def obs_canvas_get_channel(canvas: "obs_canvas_t *", channel: "uint32_t") -> "obs_source_t *":
+    r"""
+    obs_canvas_get_channel(canvas, channel) -> obs_source_t *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+    channel: uint32_t
+
+    """
+    return _obspython.obs_canvas_get_channel(canvas, channel)
+
+def obs_canvas_scene_create(canvas: "obs_canvas_t *", name: "char const *") -> "obs_scene_t *":
+    r"""
+    obs_canvas_scene_create(canvas, name) -> obs_scene_t *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+    name: char const *
+
+    """
+    return _obspython.obs_canvas_scene_create(canvas, name)
+
+def obs_canvas_scene_remove(scene: "obs_scene_t *") -> "void":
+    r"""
+    obs_canvas_scene_remove(scene)
+
+    Parameters
+    ----------
+    scene: obs_scene_t *
+
+    """
+    return _obspython.obs_canvas_scene_remove(scene)
+
+def obs_canvas_move_scene(scene: "obs_scene_t *", dst: "obs_canvas_t *") -> "void":
+    r"""
+    obs_canvas_move_scene(scene, dst)
+
+    Parameters
+    ----------
+    scene: obs_scene_t *
+    dst: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_move_scene(scene, dst)
+
+def obs_canvas_enum_scenes(canvas: "obs_canvas_t *", enum_proc: "bool (*)(void *,obs_source_t *)", param: "void *") -> "void":
+    r"""
+    obs_canvas_enum_scenes(canvas, enum_proc, param)
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+    enum_proc: bool (*)(void *,obs_source_t *)
+    param: void *
+
+    """
+    return _obspython.obs_canvas_enum_scenes(canvas, enum_proc, param)
+
+def obs_canvas_get_source_by_name(canvas: "obs_canvas_t *", name: "char const *") -> "obs_source_t *":
+    r"""
+    obs_canvas_get_source_by_name(canvas, name) -> obs_source_t *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+    name: char const *
+
+    """
+    return _obspython.obs_canvas_get_source_by_name(canvas, name)
+
+def obs_canvas_get_scene_by_name(canvas: "obs_canvas_t *", name: "char const *") -> "obs_scene_t *":
+    r"""
+    obs_canvas_get_scene_by_name(canvas, name) -> obs_scene_t *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+    name: char const *
+
+    """
+    return _obspython.obs_canvas_get_scene_by_name(canvas, name)
+
+def obs_canvas_reset_video(canvas: "obs_canvas_t *", ovi: "obs_video_info") -> "bool":
+    r"""
+    obs_canvas_reset_video(canvas, ovi) -> bool
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+    ovi: struct obs_video_info *
+
+    """
+    return _obspython.obs_canvas_reset_video(canvas, ovi)
+
+def obs_canvas_has_video(canvas: "obs_canvas_t *") -> "bool":
+    r"""
+    obs_canvas_has_video(canvas) -> bool
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_has_video(canvas)
+
+def obs_canvas_get_video(canvas: "obs_canvas_t const *") -> "video_t *":
+    r"""
+    obs_canvas_get_video(canvas) -> video_t *
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t const *
+
+    """
+    return _obspython.obs_canvas_get_video(canvas)
+
+def obs_canvas_get_video_info(canvas: "obs_canvas_t const *", ovi: "obs_video_info") -> "bool":
+    r"""
+    obs_canvas_get_video_info(canvas, ovi) -> bool
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t const *
+    ovi: struct obs_video_info *
+
+    """
+    return _obspython.obs_canvas_get_video_info(canvas, ovi)
+
+def obs_canvas_render(canvas: "obs_canvas_t *") -> "void":
+    r"""
+    obs_canvas_render(canvas)
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_render(canvas)
 CALL_PARAM_TYPE_VOID = _obspython.CALL_PARAM_TYPE_VOID
 
 CALL_PARAM_TYPE_INT = _obspython.CALL_PARAM_TYPE_INT
@@ -16305,17 +17361,6 @@ class base_allocator(object):
 
 # Register base_allocator in _obspython:
 _obspython.base_allocator_swigregister(base_allocator)
-
-def base_set_allocator(defs: "base_allocator") -> "void":
-    r"""
-    base_set_allocator(defs)
-
-    Parameters
-    ----------
-    defs: struct base_allocator *
-
-    """
-    return _obspython.base_set_allocator(defs)
 
 def bmalloc(size: "size_t") -> "void *":
     r"""
@@ -17307,6 +18352,10 @@ def os_breakpoint() -> "void":
     r"""os_breakpoint()"""
     return _obspython.os_breakpoint()
 
+def os_oom() -> "void":
+    r"""os_oom()"""
+    return _obspython.os_oom()
+
 def os_get_physical_cores() -> "int":
     r"""os_get_physical_cores() -> int"""
     return _obspython.os_get_physical_cores()
@@ -17362,8 +18411,445 @@ UUID_STR_LENGTH = _obspython.UUID_STR_LENGTH
 def os_generate_uuid() -> "char *":
     r"""os_generate_uuid() -> char *"""
     return _obspython.os_generate_uuid()
+
+def os_nstime_to_timespec(timestamp: "uint64_t", storage: "struct timespec *") -> "struct timespec *":
+    r"""
+    os_nstime_to_timespec(timestamp, storage) -> struct timespec *
+
+    Parameters
+    ----------
+    timestamp: uint64_t
+    storage: struct timespec *
+
+    """
+    return _obspython.os_nstime_to_timespec(timestamp, storage)
 ARCH_BITS = _obspython.ARCH_BITS
 
+CONFIG_SUCCESS = _obspython.CONFIG_SUCCESS
+
+CONFIG_FILENOTFOUND = _obspython.CONFIG_FILENOTFOUND
+
+CONFIG_ERROR = _obspython.CONFIG_ERROR
+
+CONFIG_OPEN_EXISTING = _obspython.CONFIG_OPEN_EXISTING
+
+CONFIG_OPEN_ALWAYS = _obspython.CONFIG_OPEN_ALWAYS
+
+
+def config_create(file: "char const *") -> "config_t *":
+    r"""
+    config_create(file) -> config_t *
+
+    Parameters
+    ----------
+    file: char const *
+
+    """
+    return _obspython.config_create(file)
+
+def config_open(config: "config_t **", file: "char const *", open_type: "enum config_open_type") -> "int":
+    r"""
+    config_open(config, file, open_type) -> int
+
+    Parameters
+    ----------
+    config: config_t **
+    file: char const *
+    open_type: enum enum config_open_type
+
+    """
+    return _obspython.config_open(config, file, open_type)
+
+def config_open_string(config: "config_t **", str: "char const *") -> "int":
+    r"""
+    config_open_string(config, str) -> int
+
+    Parameters
+    ----------
+    config: config_t **
+    str: char const *
+
+    """
+    return _obspython.config_open_string(config, str)
+
+def config_save(config: "config_t *") -> "int":
+    r"""
+    config_save(config) -> int
+
+    Parameters
+    ----------
+    config: config_t *
+
+    """
+    return _obspython.config_save(config)
+
+def config_save_safe(config: "config_t *", temp_ext: "char const *", backup_ext: "char const *") -> "int":
+    r"""
+    config_save_safe(config, temp_ext, backup_ext) -> int
+
+    Parameters
+    ----------
+    config: config_t *
+    temp_ext: char const *
+    backup_ext: char const *
+
+    """
+    return _obspython.config_save_safe(config, temp_ext, backup_ext)
+
+def config_close(config: "config_t *") -> "void":
+    r"""
+    config_close(config)
+
+    Parameters
+    ----------
+    config: config_t *
+
+    """
+    return _obspython.config_close(config)
+
+def config_num_sections(config: "config_t *") -> "size_t":
+    r"""
+    config_num_sections(config) -> size_t
+
+    Parameters
+    ----------
+    config: config_t *
+
+    """
+    return _obspython.config_num_sections(config)
+
+def config_get_section(config: "config_t *", idx: "size_t") -> "char const *":
+    r"""
+    config_get_section(config, idx) -> char const *
+
+    Parameters
+    ----------
+    config: config_t *
+    idx: size_t
+
+    """
+    return _obspython.config_get_section(config, idx)
+
+def config_set_string(config: "config_t *", section: "char const *", name: "char const *", value: "char const *") -> "void":
+    r"""
+    config_set_string(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: char const *
+
+    """
+    return _obspython.config_set_string(config, section, name, value)
+
+def config_set_int(config: "config_t *", section: "char const *", name: "char const *", value: "int64_t") -> "void":
+    r"""
+    config_set_int(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: int64_t
+
+    """
+    return _obspython.config_set_int(config, section, name, value)
+
+def config_set_uint(config: "config_t *", section: "char const *", name: "char const *", value: "uint64_t") -> "void":
+    r"""
+    config_set_uint(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: uint64_t
+
+    """
+    return _obspython.config_set_uint(config, section, name, value)
+
+def config_set_bool(config: "config_t *", section: "char const *", name: "char const *", value: "bool") -> "void":
+    r"""
+    config_set_bool(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: bool
+
+    """
+    return _obspython.config_set_bool(config, section, name, value)
+
+def config_set_double(config: "config_t *", section: "char const *", name: "char const *", value: "double") -> "void":
+    r"""
+    config_set_double(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: double
+
+    """
+    return _obspython.config_set_double(config, section, name, value)
+
+def config_get_string(config: "config_t *", section: "char const *", name: "char const *") -> "char const *":
+    r"""
+    config_get_string(config, section, name) -> char const *
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_string(config, section, name)
+
+def config_get_int(config: "config_t *", section: "char const *", name: "char const *") -> "int64_t":
+    r"""
+    config_get_int(config, section, name) -> int64_t
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_int(config, section, name)
+
+def config_get_uint(config: "config_t *", section: "char const *", name: "char const *") -> "uint64_t":
+    r"""
+    config_get_uint(config, section, name) -> uint64_t
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_uint(config, section, name)
+
+def config_get_bool(config: "config_t *", section: "char const *", name: "char const *") -> "bool":
+    r"""
+    config_get_bool(config, section, name) -> bool
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_bool(config, section, name)
+
+def config_get_double(config: "config_t *", section: "char const *", name: "char const *") -> "double":
+    r"""
+    config_get_double(config, section, name) -> double
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_double(config, section, name)
+
+def config_remove_value(config: "config_t *", section: "char const *", name: "char const *") -> "bool":
+    r"""
+    config_remove_value(config, section, name) -> bool
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_remove_value(config, section, name)
+
+def config_open_defaults(config: "config_t *", file: "char const *") -> "int":
+    r"""
+    config_open_defaults(config, file) -> int
+
+    Parameters
+    ----------
+    config: config_t *
+    file: char const *
+
+    """
+    return _obspython.config_open_defaults(config, file)
+
+def config_set_default_string(config: "config_t *", section: "char const *", name: "char const *", value: "char const *") -> "void":
+    r"""
+    config_set_default_string(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: char const *
+
+    """
+    return _obspython.config_set_default_string(config, section, name, value)
+
+def config_set_default_int(config: "config_t *", section: "char const *", name: "char const *", value: "int64_t") -> "void":
+    r"""
+    config_set_default_int(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: int64_t
+
+    """
+    return _obspython.config_set_default_int(config, section, name, value)
+
+def config_set_default_uint(config: "config_t *", section: "char const *", name: "char const *", value: "uint64_t") -> "void":
+    r"""
+    config_set_default_uint(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: uint64_t
+
+    """
+    return _obspython.config_set_default_uint(config, section, name, value)
+
+def config_set_default_bool(config: "config_t *", section: "char const *", name: "char const *", value: "bool") -> "void":
+    r"""
+    config_set_default_bool(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: bool
+
+    """
+    return _obspython.config_set_default_bool(config, section, name, value)
+
+def config_set_default_double(config: "config_t *", section: "char const *", name: "char const *", value: "double") -> "void":
+    r"""
+    config_set_default_double(config, section, name, value)
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+    value: double
+
+    """
+    return _obspython.config_set_default_double(config, section, name, value)
+
+def config_get_default_string(config: "config_t *", section: "char const *", name: "char const *") -> "char const *":
+    r"""
+    config_get_default_string(config, section, name) -> char const *
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_default_string(config, section, name)
+
+def config_get_default_int(config: "config_t *", section: "char const *", name: "char const *") -> "int64_t":
+    r"""
+    config_get_default_int(config, section, name) -> int64_t
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_default_int(config, section, name)
+
+def config_get_default_uint(config: "config_t *", section: "char const *", name: "char const *") -> "uint64_t":
+    r"""
+    config_get_default_uint(config, section, name) -> uint64_t
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_default_uint(config, section, name)
+
+def config_get_default_bool(config: "config_t *", section: "char const *", name: "char const *") -> "bool":
+    r"""
+    config_get_default_bool(config, section, name) -> bool
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_default_bool(config, section, name)
+
+def config_get_default_double(config: "config_t *", section: "char const *", name: "char const *") -> "double":
+    r"""
+    config_get_default_double(config, section, name) -> double
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_get_default_double(config, section, name)
+
+def config_has_user_value(config: "config_t *", section: "char const *", name: "char const *") -> "bool":
+    r"""
+    config_has_user_value(config, section, name) -> bool
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_has_user_value(config, section, name)
+
+def config_has_default_value(config: "config_t *", section: "char const *", name: "char const *") -> "bool":
+    r"""
+    config_has_default_value(config, section, name) -> bool
+
+    Parameters
+    ----------
+    config: config_t *
+    section: char const *
+    name: char const *
+
+    """
+    return _obspython.config_has_default_value(config, section, name)
 OBS_FRONTEND_EVENT_STREAMING_STARTING = _obspython.OBS_FRONTEND_EVENT_STREAMING_STARTING
 
 OBS_FRONTEND_EVENT_STREAMING_STARTED = _obspython.OBS_FRONTEND_EVENT_STREAMING_STARTED
@@ -17446,6 +18932,10 @@ OBS_FRONTEND_EVENT_THEME_CHANGED = _obspython.OBS_FRONTEND_EVENT_THEME_CHANGED
 
 OBS_FRONTEND_EVENT_SCREENSHOT_TAKEN = _obspython.OBS_FRONTEND_EVENT_SCREENSHOT_TAKEN
 
+OBS_FRONTEND_EVENT_CANVAS_ADDED = _obspython.OBS_FRONTEND_EVENT_CANVAS_ADDED
+
+OBS_FRONTEND_EVENT_CANVAS_REMOVED = _obspython.OBS_FRONTEND_EVENT_CANVAS_REMOVED
+
 
 def obs_frontend_streaming_start() -> "void":
     r"""obs_frontend_streaming_start()"""
@@ -17489,6 +18979,17 @@ def obs_frontend_recording_paused() -> "bool":
 def obs_frontend_recording_split_file() -> "bool":
     r"""obs_frontend_recording_split_file() -> bool"""
     return _obspython.obs_frontend_recording_split_file()
+
+def obs_frontend_recording_add_chapter(name: "char const *") -> "bool":
+    r"""
+    obs_frontend_recording_add_chapter(name) -> bool
+
+    Parameters
+    ----------
+    name: char const *
+
+    """
+    return _obspython.obs_frontend_recording_add_chapter(name)
 
 def obs_frontend_replay_buffer_start() -> "void":
     r"""obs_frontend_replay_buffer_start()"""
@@ -17551,6 +19052,14 @@ def obs_frontend_get_profile_config() -> "config_t *":
 def obs_frontend_get_global_config() -> "config_t *":
     r"""obs_frontend_get_global_config() -> config_t *"""
     return _obspython.obs_frontend_get_global_config()
+
+def obs_frontend_get_app_config() -> "config_t *":
+    r"""obs_frontend_get_app_config() -> config_t *"""
+    return _obspython.obs_frontend_get_app_config()
+
+def obs_frontend_get_user_config() -> "config_t *":
+    r"""obs_frontend_get_user_config() -> config_t *"""
+    return _obspython.obs_frontend_get_user_config()
 
 def obs_frontend_set_streaming_service(service: "obs_service_t *") -> "void":
     r"""
@@ -17745,4 +19254,73 @@ def obs_frontend_add_undo_redo_action(name: "char const *", undo: "undo_redo_cb 
 
     """
     return _obspython.obs_frontend_add_undo_redo_action(name, undo, redo, undo_data, redo_data, repeatable)
+
+def obs_frontend_get_canvases(canvas_list: "struct obs_frontend_canvas_list *") -> "void":
+    r"""
+    obs_frontend_get_canvases(canvas_list)
+
+    Parameters
+    ----------
+    canvas_list: struct obs_frontend_canvas_list *
+
+    """
+    return _obspython.obs_frontend_get_canvases(canvas_list)
+
+def obs_frontend_add_canvas(name: "char const *", ovi: "obs_video_info", flags: "int") -> "obs_canvas_t *":
+    r"""
+    obs_frontend_add_canvas(name, ovi, flags) -> obs_canvas_t *
+
+    Parameters
+    ----------
+    name: char const *
+    ovi: struct obs_video_info *
+    flags: int
+
+    """
+    return _obspython.obs_frontend_add_canvas(name, ovi, flags)
+
+def obs_frontend_remove_canvas(canvas: "obs_canvas_t *") -> "bool":
+    r"""
+    obs_frontend_remove_canvas(canvas) -> bool
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_frontend_remove_canvas(canvas)
+
+def obs_frontend_copy_sceneitem(item: "obs_sceneitem_t *") -> "void":
+    r"""
+    obs_frontend_copy_sceneitem(item)
+
+    Parameters
+    ----------
+    item: obs_sceneitem_t *
+
+    """
+    return _obspython.obs_frontend_copy_sceneitem(item)
+
+def obs_frontend_can_paste_sceneitem(duplicate: "bool") -> "bool":
+    r"""
+    obs_frontend_can_paste_sceneitem(duplicate) -> bool
+
+    Parameters
+    ----------
+    duplicate: bool
+
+    """
+    return _obspython.obs_frontend_can_paste_sceneitem(duplicate)
+
+def obs_frontend_paste_sceneitem(scene: "obs_scene_t *", duplicate: "bool") -> "void":
+    r"""
+    obs_frontend_paste_sceneitem(scene, duplicate)
+
+    Parameters
+    ----------
+    scene: obs_scene_t *
+    duplicate: bool
+
+    """
+    return _obspython.obs_frontend_paste_sceneitem(scene, duplicate)
 
