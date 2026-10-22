@@ -18,3 +18,5 @@ QMMP/.qmmp/qmmp.ini
 PotPlayer/Playlist/PotPlayer.dpl
 MBP/MusicBrainz-Picard/sessions/autosave.mbps.gz
 MBP/MusicBrainz-Picard/.Config.ini.synclock
+FeedNotifier/Data/settings/log.txt
+/FeedRoller/Cache
