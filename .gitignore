@@ -13,3 +13,4 @@ OBS-Studio/obs-plugins/64bit/libcef.dll
 /OBS-Studio/data/obs-studio/locale
 QMMP/.qmmp/qmmp.ini.lock
 QMMP/.qmmp/qmmp.ini
+/QMMP/translations
