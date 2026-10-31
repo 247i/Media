@@ -1,5 +1,4 @@
 DesktopTicker/Settings.xml
-/DesktopTicker
 /PotPlayer/History
 /PotPlayer/Language
 /PotPlayer/WebView2
@@ -20,3 +19,4 @@ MBP/MusicBrainz-Picard/sessions/autosave.mbps.gz
 MBP/MusicBrainz-Picard/.Config.ini.synclock
 FeedNotifier/Data/settings/log.txt
 /FeedRoller/Cache
+DesktopTicker/DTInst_*
