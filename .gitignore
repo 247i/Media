@@ -31,3 +31,4 @@ MuseScore/App/MuseScore/bin/MuseScore4.exe
 OBS-Studio/core/obs-browser/libcef/.text
 /OBS-Studio/core/obs-browser/locales
 /OBS-Studio/core/obs-nvenc/data/locale
+/OBS-Studio/core/obs-outputs/data/locale
