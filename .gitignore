@@ -44,3 +44,4 @@ OBS-Studio/core/obs-browser/libcef/.text
 /OBS-Studio/core/vlc-video/data/locale
 /OBS-Studio/core/win-capture/data/locale
 /OBS-Studio/core/win-dshow/data/locale
+/OBS-Studio/core/win-wasapi/data/locale
