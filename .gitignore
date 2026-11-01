@@ -27,3 +27,5 @@ MuseScore/App/MuseScore/bin/MuseScore4.exe
 /OBS-Studio/core/decklink/data/locale
 /OBS-Studio/core/aja-output-ui/data/locale
 /OBS-Studio/core/frontend-tools/data/locale
+/OBS-Studio/core/obs-browser/data/locale
+OBS-Studio/core/obs-browser/libcef/.text
