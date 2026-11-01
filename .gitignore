@@ -33,3 +33,4 @@ OBS-Studio/core/obs-browser/libcef/.text
 /OBS-Studio/core/obs-nvenc/data/locale
 /OBS-Studio/core/obs-outputs/data/locale
 /OBS-Studio/core/obs-qsv11/data/locale
+/OBS-Studio/core/obs-text/data/locale
