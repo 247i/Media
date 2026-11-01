@@ -1,0 +1,292 @@
+2026-11-01T11:39:03.772 | INFO  | main_thread     | GlobalModule::onPreInit | log path: D:/Z/Apps/Media/MuseScore/Data/settings/logs/MuseScore_261101_113903.log
+2026-11-01T11:39:03.772 | INFO  | main_thread     | GlobalModule::onPreInit | === Started MuseScore Studio 4.7.6, build: 261022093 ===
+2026-11-01T11:39:03.819 | INFO  | main_thread     | LanguagesService::effectiveLanguageCode | System languages: QVariant(QStringList, QList("ta-Taml-IN", "ta-IN", "ta-Taml", "ta", "en-Latn-US", "en-US", "en-Latn", "en")) 
+2026-11-01T11:39:03.821 | INFO  | main_thread     | MultiProcessProvider::init | our instance id is: ae0a6f030e08466083837e1cd315ea0c
+2026-11-01T11:39:03.821 | INFO  | main_thread     | IpcChannel::setupConnection | starting ipc server
+2026-11-01T11:39:03.825 | INFO  | 24656           | <lambda_1>::operator  | ipc server: client with id "ae0a6f030e08466083837e1cd315ea0c"  has connected
+2026-11-01T11:39:03.826 | INFO  | main_thread     | IpcSocket::connect | success connected to ipc server
+2026-11-01T11:39:03.991 | INFO  | main_thread     | DiagnosticsModule::onInit | success start crash handler
+2026-11-01T11:39:03.991 | INFO  | main_thread     | WasapiAudioDriver::init | begin driver init
+2026-11-01T11:39:03.991 | INFO  | 24436           | GeneralAudioWorker::th_main | Waitable timer successfully created, interval: 1 ms
+2026-11-01T11:39:03.991 | INFO  | 24436           | StartAudioController::th_setupEngine | begin engine run
+2026-11-01T11:39:03.992 | INFO  | 24436           | StartAudioController::th_setupEngine | audio engine running
+2026-11-01T11:39:04.005 | INFO  | main_thread     | WasapiAudioDriver::init | success driver init
+2026-11-01T11:39:04.005 | INFO  | main_thread     | AudioDriverController::open | Trying to open audio driver: WASAPI, deviceId: default, sampleRate: 44100, channels: 2, samplesPerChannel: 1024
+2026-11-01T11:39:04.005 | INFO  | main_thread     | WasapiAudioDriver::open | try open driver, device: {0.0.0.00000000}.{a82efb77-8850-4298-84dd-68c70aace848}
+2026-11-01T11:39:04.013 | INFO  | main_thread     | AudioDriverController::open | Opened audio driver: WASAPI, deviceId: default, sampleRate: 48000, channels: 2, samplesPerChannel: 1024
+2026-11-01T11:39:04.014 | INFO  | main_thread     | MuseSamplerResolver::init | MuseSampler library not found: C:/Users/inthirua/AppData/Local/MuseSampler/lib/MuseSamplerCoreLib.dll
+2026-11-01T11:39:04.025 | INFO  | main_thread     | AbstractCloudService::readTokens | Could not find the tokens file: D:/Z/Apps/Media/MuseScore/Data/settings/musescorecom_cred.dat
+2026-11-01T11:39:04.026 | INFO  | main_thread     | AbstractCloudService::readTokens | Could not find the tokens file: D:/Z/Apps/Media/MuseScore/Data/settings/audiocom_cred.dat
+2026-11-01T11:39:05.502 | ERROR | main_thread     | ExtensionsConfiguration::manifestConfigs | failed read config data, err: [406] An error occurred when reading from the file, file: D:/Z/Apps/Media/MuseScore/Data/settings/plugins/plugins.json
+2026-11-01T11:39:05.654 | INFO  | main_thread     | WinMidiInPort::connect | Connected to -1
+2026-11-01T11:39:05.801 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: file-save-online
+2026-11-01T11:39:05.801 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: file-part-export
+2026-11-01T11:39:05.801 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: file-import-pdf
+2026-11-01T11:39:05.801 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: undo
+2026-11-01T11:39:05.801 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: redo
+2026-11-01T11:39:05.801 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: cut
+2026-11-01T11:39:05.801 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: copy
+2026-11-01T11:39:05.801 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: paste
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: paste-half
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: paste-double
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: paste-special
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: swap
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: note-input-steptime
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: prev-chord
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: prev-measure
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: next-chord
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: next-measure
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: select-section
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: escape
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: delete
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: pad-note-increase
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: pad-note-decrease
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: pad-dotdot
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: beam-start
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: beam-mid
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: no-beam
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: beam32
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: beam64
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: auto-beam
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: fbeam1
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: fbeam2
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-palette
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-playpanel
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-selection-window
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-midiimportpanel
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-fileoperations
+2026-11-01T11:39:05.802 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-concertpitch
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-imagecapture
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-feedback
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-workspaces-toolbar
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: create-new-workspace
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: mag
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: picture
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: play-prev-chord
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: play-prev-measure
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: play-next-chord
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: play-next-measure
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: seek-begin
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: seek-end
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: select-all
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: repeat-cmd
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: edit-info
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: debugger
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: mark-irregular
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: rest-1
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: rest-2
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: rest-4
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: rest-8
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: backspace
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: edit-harmony
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: synth-control
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: follow
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: split-h
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: split-v
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: revision
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: fotomode
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: hraster
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: vraster
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: config-raster
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: toggle-piano
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: media
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: album
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: layer
+2026-11-01T11:39:05.803 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: next-score
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: previous-score
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: plugin-creator
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: plugin-manager
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: resource-manager
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: playback-speed-increase
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: playback-speed-decrease
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: playback-speed-reset
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: key-signatures
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: time-signatures
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: symbols
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: viewmode
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: next-lyric
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: prev-lyric
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: lock
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: note-longa-TAB
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: note-breve-TAB
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: pad-note-increase-TAB
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: pad-note-decrease-TAB
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: pad-rest-TAB
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: prev-measure-TEXT
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: next-measure-TEXT
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: text-word-left
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: text-word-right
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: add-remove-breaks
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: startcenter
+2026-11-01T11:39:05.804 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: edit-toolbars
+2026-11-01T11:39:05.805 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: show-tours
+2026-11-01T11:39:05.805 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: reset-tours
+2026-11-01T11:39:05.805 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: report-bug
+2026-11-01T11:39:05.805 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: leave-feedback
+2026-11-01T11:39:05.805 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: zoom-in-horiz-pre
+2026-11-01T11:39:05.805 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: zoom-out-horiz-pre
+2026-11-01T11:39:05.805 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: zoom-in-vert-pre
+2026-11-01T11:39:05.805 | WARN  | main_thread     | ShortcutsRegister::readShortcut | ignoring shortcut for invalid action: zoom-out-vert-pre
+2026-11-01T11:39:05.881 | INFO  | main_thread     | GuiApp::setup   | Using graphics api: "d3d11" 
+2026-11-01T11:39:05.881 | INFO  | main_thread     | GuiApp::setup   | Gui platform: "windows" 
+2026-11-01T11:39:05.881 | INFO  | main_thread     | GuiApp::setup   | Detecting problems with graphics api
+2026-11-01T11:39:05.881 | INFO  | main_thread     | GuiApp::setupNewContext | New context created with id: 0
+2026-11-01T11:39:06.805 | WARN  | main_thread     | Qt              | void __cdecl KDDockWidgets::DockRegistry::registerDockWidget(class KDDockWidgets::DockWidgetBase *) Another DockWidget KDDockWidgets::DockWidgetQuick(0x1636ed0e1a0, name="undoRedoToolBar", parent=0x0, geometry=0,0 800x800) with name "undoRedoToolBar"  already exists. KDDockWidgets::DockWidgetBase(0x1636f324a30, parent=0x0, geometry=0,0 800x800)
+2026-11-01T11:39:06.806 | WARN  | main_thread     | Qt              | void __cdecl KDDockWidgets::DockRegistry::registerDockWidget(class KDDockWidgets::DockWidgetBase *) Another DockWidget KDDockWidgets::DockWidgetQuick(0x1636f05aaf0, name="extensionsToolBar", parent=0x0, geometry=0,0 800x800) with name "extensionsToolBar"  already exists. KDDockWidgets::DockWidgetBase(0x1636f326e80, parent=0x0, geometry=0,0 800x800)
+2026-11-01T11:39:06.816 | WARN  | main_thread     | Qt              | void __cdecl KDDockWidgets::DockRegistry::registerDockWidget(class KDDockWidgets::DockWidgetBase *) Another DockWidget KDDockWidgets::DockWidgetQuick(0x1636f06f150, name="playbackToolBar", parent=0x0, geometry=0,0 800x800) with name "playbackToolBar"  already exists. KDDockWidgets::DockWidgetBase(0x1636f33b630, parent=0x0, geometry=0,0 800x800)
+2026-11-01T11:39:06.852 | WARN  | main_thread     | Qt              | void __cdecl Layouting::ItemBoxContainer::setSize_recursive(class QSize,enum Layouting::ChildrenResizeStrategy) New size doesn't respect size constraints ; new= QSize(0, -32) ; min= QSize(0, 0) Layouting::ItemBoxContainer(0x1636f8c4750)
+2026-11-01T11:39:06.852 | WARN  | main_thread     | Qt              | void __cdecl Layouting::ItemBoxContainer::setSize_recursive(class QSize,enum Layouting::ChildrenResizeStrategy) New size doesn't respect size constraints ; new= QSize(0, -32) ; min= QSize(0, 0) Layouting::ItemBoxContainer(0x1636f8c4750)
+2026-11-01T11:39:06.854 | WARN  | main_thread     | Qt              | void __cdecl Layouting::ItemBoxContainer::setSize_recursive(class QSize,enum Layouting::ChildrenResizeStrategy) New size doesn't respect size constraints ; new= QSize(1165, -32) ; min= QSize(0, 0) Layouting::ItemBoxContainer(0x1636f8c4750)
+2026-11-01T11:39:06.889 | ERROR | main_thread     | AppShellConfiguration::sessionProjectsPaths | [401] The file does not exist
+2026-11-01T11:39:06.997 | INFO  | main_thread     | main            | "SSL Info: supported: 1, build: Secure Channel (NTDDI: 0xA00000C), runtime: Secure Channel, Windows 10.0.22631, active backend: schannel, available backends: cert-only, schannel" 
+2026-11-01T11:39:07.132 | INFO  | main_thread     | <lambda_3>::operator  | No problems detected with graphics api
+2026-11-01T11:39:07.133 | INFO  | 24436           | SoundFontRepository::loadSoundFonts | try add sound font: file://D%3A/Z/Apps/Media/MuseScore/App/MuseScore/sound/MS%20Basic.sf3
+2026-11-01T11:39:07.169 | INFO  | 24436           | <lambda_1>::operator  | added sound font, uri: file://D%3A/Z/Apps/Media/MuseScore/App/MuseScore/sound/MS%20Basic.sf3
+2026-11-01T11:39:07.169 | INFO  | 24436           | <lambda_1>::operator  | remaining: 1, total: 2
+2026-11-01T11:39:07.169 | INFO  | 24436           | SoundFontRepository::loadSoundFonts | try add sound font: file://D%3A/Z/Apps/Media/MuseScore/App/MuseScore/sound/MuseScore_General.sf3
+2026-11-01T11:39:07.185 | INFO  | 24436           | <lambda_1>::operator  | added sound font, uri: file://D%3A/Z/Apps/Media/MuseScore/App/MuseScore/sound/MuseScore_General.sf3
+2026-11-01T11:39:07.185 | INFO  | 24436           | <lambda_1>::operator  | remaining: 0, total: 2
+2026-11-01T11:39:07.187 | INFO  | 24436           | <lambda_1>::operator  | all added notify about sound fonts changed
+2026-11-01T11:39:07.187 | INFO  | 24436           | AudioEngine::init | [OutputSpec] sampleRate: 48000, samplesPerChannel: 1024, audioChannelCount: 2
+2026-11-01T11:39:08.642 | WARN  | main_thread     | Qt              | qrc:/qt/qml/MuseScore/AppShell/FirstLaunchSetup/FirstLaunchSetupDialog.qml: Setting initial properties failed: FirstLaunchSetupDialog does not have a property called floating
+2026-11-01T11:39:09.186 | INFO  | main_thread     | ActionsDispatcher::doDispatch | try call action: dock-set-open
+2026-11-01T11:40:00.098 | INFO  | main_thread     | GuiApp::finish  | activeThreadCount: 0
+2026-11-01T11:40:00.383 | WARN  | main_thread     | WinMidiInPort::stop | Already stopped: -1
+2026-11-01T11:40:00.383 | INFO  | main_thread     | WinMidiInPort::disconnect | Disconnected from -1
+2026-11-01T11:40:00.469 | INFO  | main_thread     | Profiler        | 
+
+Main thread. Top 150 by sum time (total count: 120)
+Function                                                    Call time         Call count        Sum time          
+DockWindow::loadPage                                        161.345 ms        6                 968.069 ms        
+DockWindow::loadPageContent                                 113.753 ms        5                 568.765 ms        
+DockWindow::addDock                                         6.993 ms          79                552.428 ms        
+GuiApp::finish                                              369.947 ms        1                 369.947 ms        
+DockWindow::loadPanels                                      55.767 ms         5                 278.834 ms        
+DockWindow::loadToolBars                                    33.312 ms         5                 166.560 ms        
+DockWindow::initDocks                                       24.596 ms         5                 122.982 ms        
+StartupScenario::runAfterSplashScreen                       108.584 ms        1                 108.584 ms        
+MuseSoundsListModel::applyFilter                            104.112 ms        1                 104.112 ms        
+DockPageView::init                                          19.513 ms         5                 97.564 ms         
+FretDiagram::readHarmonyToDiagramFile                       82.344 ms         1                 82.344 ms         
+StartupScenario::showStartupDialogsIfNeed                   40.010 ms         2                 80.021 ms         
+DockWindow::loadTopLevelToolBars                            15.782 ms         5                 78.910 ms         
+DockWindow::restorePageState                                14.350 ms         5                 71.750 ms         
+DockWindow::restoreLayout                                   23.818 ms         3                 71.453 ms         
+dock::clearRegistry                                         9.520 ms          6                 57.121 ms         
+InstrumentsRepository::load                                 38.768 ms         1                 38.768 ms         
+GeneralSoundFontController::doLoadSoundFonts                31.953 ms         1                 31.953 ms         
+MuseSoundsRepository::init                                  25.290 ms         1                 25.290 ms         
+AbstractMenuModel::setItems                                 0.706 ms          31                21.895 ms         
+AbstractToolBarModel::setItems                              1.717 ms          11                18.888 ms         
+DockBase::componentComplete                                 0.142 ms          74                10.483 ms         
+AppMenuModel::load                                          9.941 ms          1                 9.941 ms          
+ExtPluginsLoader::loadManifestList                          9.104 ms          1                 9.104 ms          
+WasapiAudioDriver::updateAudioDeviceList                    8.849 ms          1                 8.849 ms          
+DockWindow::savePageState                                   2.024 ms          4                 8.095 ms          
+WasapiAudioDriver::open                                     7.940 ms          1                 7.940 ms          
+DockWindow::windowState                                     1.321 ms          6                 7.927 ms          
+XmlStreamReader::setData                                    0.005 ms          1283              6.478 ms          
+ShortcutsRegister::reload                                   6.002 ms          1                 6.002 ms          
+LanguagesService::init                                      5.590 ms          1                 5.590 ms          
+LanguagesService::setCurrentLanguage                        5.100 ms          1                 5.100 ms          
+NavigationControl::setPanel                                 0.003 ms          1708              4.286 ms          
+ShortcutsRegister::readFromFile                             2.117 ms          2                 4.233 ms          
+DockBase::applySizeConstraints                              0.019 ms          226               4.191 ms          
+DockWindow::onQuit                                          3.940 ms          1                 3.940 ms          
+ShortcutsRegister::setShortcuts                             2.478 ms          1                 2.478 ms          
+NavigationController::onActiveRequested                     0.176 ms          14                2.462 ms          
+ExtensionsLoader::loadManifestList                          2.453 ms          1                 2.453 ms          
+ShortcutsRegister::mergeShortcuts                           0.925 ms          2                 1.850 ms          
+DockBase::close                                             1.756 ms          1                 1.756 ms          
+ShortcutsRegister::writeToFile                              1.651 ms          1                 1.651 ms          
+NavigationPanel::addControl                                 0.001 ms          1697              1.070 ms          
+LearnService::downloadPlaylist                              0.170 ms          6                 1.022 ms          
+StartupScenario::runOnSplashScreen                          0.918 ms          1                 0.918 ms          
+RegisterAudioPluginsScenario::updatePluginsRegistry         0.852 ms          1                 0.852 ms          
+RegisterAudioPluginsScenario::scanPlugins                   0.839 ms          1                 0.839 ms          
+VstPluginsScanner::scanPlugins                              0.832 ms          1                 0.832 ms          
+NavigationController::doDeactivatePanel                     0.031 ms          25                0.778 ms          
+DockPanelMenuModel::load                                    0.045 ms          16                0.719 ms          
+NavigationController::doDeactivateSection                   0.232 ms          3                 0.697 ms          
+AbstractCloudService::init                                  0.346 ms          2                 0.691 ms          
+UiActionsRegister::updateEnabledAll                         0.108 ms          6                 0.648 ms          
+NavigationPanel::removeControl                              0.001 ms          1133              0.588 ms          
+InstrumentsRepository::loadStringTuningsPresets             0.580 ms          1                 0.580 ms          
+NotationActionController::init                              0.533 ms          1                 0.533 ms          
+SymNames::loadNameToSymIdHash                               0.507 ms          1                 0.507 ms          
+NotationStatusBarModel::init                                0.164 ms          3                 0.492 ms          
+NavigationController::doDeactivateControl                   0.005 ms          95                0.463 ms          
+ShortcutsRegister::expandStandardKeys                       0.202 ms          2                 0.405 ms          
+DockWindow::componentComplete                               0.405 ms          1                 0.405 ms          
+LanguagesService::loadLanguages                             0.394 ms          1                 0.394 ms          
+DockPageView::doReorderSections                             0.007 ms          54                0.389 ms          
+DockPageView::deinit                                        0.095 ms          4                 0.379 ms          
+NavigationPanel::setSection_property                        0.001 ms          310               0.367 ms          
+RecentFilesController::recentFilesList                      0.090 ms          4                 0.359 ms          
+AbstractNotationPaintView::load                             0.164 ms          2                 0.328 ms          
+UiContextResolver::resolveCurrentUiContext                  0.021 ms          14                0.300 ms          
+NavigationController::activeControl                         0.007 ms          39                0.284 ms          
+ShortcutsRegister::makeUnique                               0.204 ms          1                 0.204 ms          
+AbstractCloudService::readTokens                            0.096 ms          2                 0.192 ms          
+DockWindow::registerDock                                    0.002 ms          85                0.175 ms          
+UiActionsRegister::updateCheckedAll                         0.172 ms          1                 0.172 ms          
+MuseSamplerResolver::init                                   0.172 ms          1                 0.172 ms          
+NavigationController::activePanel                           0.002 ms          73                0.166 ms          
+UiActionsRegister::updateChecked                            0.049 ms          3                 0.147 ms          
+AbstractMenuModel::onActionsStateChanges                    0.005 ms          27                0.147 ms          
+ConvertFileToScoreService::loadWatchedScores                0.123 ms          1                 0.123 ms          
+NavigationController::activeSection                         0.001 ms          74                0.096 ms          
+AbstractNotationPaintView::onNotationSetup                  0.048 ms          2                 0.096 ms          
+NavigationSection::addPanel                                 0.001 ms          131               0.096 ms          
+ConvertFileToScoreService::init                             0.086 ms          1                 0.086 ms          
+NotationPageModel::init                                     0.036 ms          2                 0.073 ms          
+NavigationController::unreg                                 0.003 ms          22                0.072 ms          
+NavigationController::reg                                   0.002 ms          37                0.068 ms          
+RegisterAudioPluginsScenario::init                          0.064 ms          1                 0.064 ms          
+NotationSwitchListModel::load                               0.025 ms          2                 0.050 ms          
+NavigationSection::removePanel                              0.001 ms          60                0.050 ms          
+KnownAudioPluginsRegister::load                             0.049 ms          1                 0.049 ms          
+InspectorListModel::setElementList                          0.010 ms          4                 0.040 ms          
+ConvertFileToScoreScenario::init                            0.038 ms          1                 0.038 ms          
+NotationSwitchListModel::loadNotations                      0.018 ms          2                 0.035 ms          
+AbstractNotationPaintView::horizontalScrollbarSize          0.012 ms          2                 0.024 ms          
+NotationPageModel::doUpdateDrumsetPanelVisibility           0.022 ms          1                 0.022 ms          
+StartupScenario::onStartupPageOpened                        0.018 ms          1                 0.018 ms          
+LayoutPanelTreeModel::clear                                 0.009 ms          2                 0.018 ms          
+DockWindow::checkLayoutIsCorrupted                          0.004 ms          5                 0.018 ms          
+RecentFilesController::init                                 0.011 ms          1                 0.011 ms          
+UiArrangement::toolConfig                                   0.004 ms          2                 0.007 ms          
+InstrumentsRepository::loadMuseInstruments                  0.007 ms          1                 0.007 ms          
+AbstractNotationPaintView::onCurrentNotationChanged         0.003 ms          2                 0.006 ms          
+Workspace::rawData                                          0.001 ms          4                 0.006 ms          
+NotationPageModel::doUpdatePercussionPanelVisibility        0.005 ms          1                 0.005 ms          
+ProjectAutoSaver::update                                    0.004 ms          1                 0.004 ms          
+AbstractNotationPaintView::startHorizontalScrollPosition    0.001 ms          4                 0.004 ms          
+SlurTieLayout::avoidCollisions                              0.000 ms          9                 0.004 ms          
+UiConfiguration::readThemes                                 0.004 ms          1                 0.004 ms          
+DockWindow::restoreGeometry                                 0.004 ms          1                 0.004 ms          
+ui::INavigationPanel>                                       0.002 ms          1                 0.002 ms          
+AbstractNotationPaintView::verticalScrollbarSize            0.001 ms          2                 0.002 ms          
+AbstractNotationPaintView::notationContentRect              0.000 ms          16                0.002 ms          
+AbstractNotationPaintView::onViewSizeChanged                0.000 ms          6                 0.001 ms          
+AbstractNotationPaintView::startVerticalScrollPosition      0.000 ms          4                 0.001 ms          
+AbstractNotationPaintView::onPlayingChanged                 0.000 ms          2                 0.001 ms          
+ui::INavigationControl>                                     0.001 ms          1                 0.001 ms          
+AbstractNotationPaintView::horizontalScrollableSize         0.000 ms          2                 0.001 ms          
+MuseSamplerResolver::deinit                                 0.001 ms          1                 0.001 ms          
+AbstractNotationPaintView::verticalScrollableSize           0.000 ms          2                 0.001 ms          
+RegisterAudioPluginsScenario::unregisterRemovedPlugins      0.000 ms          1                 0.000 ms          
+RegisterAudioPluginsScenario::registerNewPlugins            0.000 ms          1                 0.000 ms          
+
+
+Other threads. Top 150 by sum time (total count: 5)
+Function                                                    Call time         Call count        Sum time          
+WasapiAudioDriver::th_audioInitialize                       45.341 ms         1                 45.341 ms         
+AbstractNotationPaintView::paint                            1.050 ms          6                 6.297 ms          
+AbstractNotationPaintView::paintBackground                  1.033 ms          6                 6.201 ms          
+SynthResolver::resolveAvailableResources                    0.670 ms          1                 0.670 ms          
+SlurTieLayout::avoidCollisions                              0.001 ms          5                 0.004 ms          
+
+
+
+2026-11-01T11:40:00.526 | INFO  | main_thread     | main            | Goodbye!! code: 0

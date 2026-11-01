@@ -1,0 +1,14 @@
+prefix=D:/a/MuseScore/MuseScore/build.install/App/MuseScore
+libdir=D:/a/MuseScore/MuseScore/build.install/App/MuseScore/lib
+includedir=D:/a/MuseScore/MuseScore/build.install/App/MuseScore/include
+
+Name: mnxdom
+Description: MNX Document Object Model for C++17
+Version: 2.1
+# nlohmann_json_schema_validator is not listed here because it has no
+# pkg-config files exposed. However it should be dynamically linked to the
+# shared objects of mnxdom. nlohmann_json OTH, is a header only library which
+# is required by mnxdom, so it is sensible to mention it here.
+Requires: nlohmann_json
+Libs: -L${libdir} -lmnxdom
+Cflags: -I${includedir} -DJSON_DISABLE_ENUM_SERIALIZATION=1
