@@ -8708,9 +8708,9 @@ def obs_hotkey_pair_set_descriptions(id: "obs_hotkey_pair_id", desc0: "char cons
     """
     return _obspython.obs_hotkey_pair_set_descriptions(id, desc0, desc1)
 
-def obs_hotkeys_set_audio_hotkeys_translations(mute: "char const *", unmute: "char const *", push_to_mute: "char const *", push_to_talk: "char const *") -> "void":
+def obs_hotkeys_set_audio_hotkeys_translations(mute: "char const *", unmute: "char const *", push_to_mute: "char const *", push_to_talk: "char const *", monitor_on: "char const *", monitor_off: "char const *") -> "void":
     r"""
-    obs_hotkeys_set_audio_hotkeys_translations(mute, unmute, push_to_mute, push_to_talk)
+    obs_hotkeys_set_audio_hotkeys_translations(mute, unmute, push_to_mute, push_to_talk, monitor_on, monitor_off)
 
     Parameters
     ----------
@@ -8718,9 +8718,11 @@ def obs_hotkeys_set_audio_hotkeys_translations(mute: "char const *", unmute: "ch
     unmute: char const *
     push_to_mute: char const *
     push_to_talk: char const *
+    monitor_on: char const *
+    monitor_off: char const *
 
     """
-    return _obspython.obs_hotkeys_set_audio_hotkeys_translations(mute, unmute, push_to_mute, push_to_talk)
+    return _obspython.obs_hotkeys_set_audio_hotkeys_translations(mute, unmute, push_to_mute, push_to_talk, monitor_on, monitor_off)
 
 def obs_hotkeys_set_sceneitem_hotkeys_translations(show: "char const *", hide: "char const *") -> "void":
     r"""
@@ -9151,6 +9153,14 @@ OBS_MODULE_DISABLED_SAFE = _obspython.OBS_MODULE_DISABLED_SAFE
 OBS_MODULE_FAILED_TO_OPEN = _obspython.OBS_MODULE_FAILED_TO_OPEN
 
 OBS_MODULE_FAILED_TO_INITIALIZE = _obspython.OBS_MODULE_FAILED_TO_INITIALIZE
+
+OBS_MODULE_TYPE_UNDEFINED = _obspython.OBS_MODULE_TYPE_UNDEFINED
+
+OBS_MODULE_TYPE_CORE = _obspython.OBS_MODULE_TYPE_CORE
+
+OBS_MODULE_TYPE_PLUGIN = _obspython.OBS_MODULE_TYPE_PLUGIN
+
+OBS_MODULE_TYPE_LEGACY_PLUGIN = _obspython.OBS_MODULE_TYPE_LEGACY_PLUGIN
 
 class obs_transform_info(object):
     r"""Proxy of C obs_transform_info struct."""
@@ -12112,6 +12122,29 @@ OBS_MONITORING_TYPE_MONITOR_ONLY = _obspython.OBS_MONITORING_TYPE_MONITOR_ONLY
 
 OBS_MONITORING_TYPE_MONITOR_AND_OUTPUT = _obspython.OBS_MONITORING_TYPE_MONITOR_AND_OUTPUT
 
+
+def obs_source_set_monitoring_enabled(source: "obs_source_t *", enabled: "bool") -> "void":
+    r"""
+    obs_source_set_monitoring_enabled(source, enabled)
+
+    Parameters
+    ----------
+    source: obs_source_t *
+    enabled: bool
+
+    """
+    return _obspython.obs_source_set_monitoring_enabled(source, enabled)
+
+def obs_source_get_monitoring_enabled(source: "obs_source_t const *") -> "bool":
+    r"""
+    obs_source_get_monitoring_enabled(source) -> bool
+
+    Parameters
+    ----------
+    source: obs_source_t const *
+
+    """
+    return _obspython.obs_source_get_monitoring_enabled(source)
 
 def obs_source_set_monitoring_type(source: "obs_source_t *", type: "enum obs_monitoring_type") -> "void":
     r"""
@@ -16925,6 +16958,17 @@ def obs_canvas_render(canvas: "obs_canvas_t *") -> "void":
 
     """
     return _obspython.obs_canvas_render(canvas)
+
+def obs_canvas_video_active(canvas: "obs_canvas_t *") -> "bool":
+    r"""
+    obs_canvas_video_active(canvas) -> bool
+
+    Parameters
+    ----------
+    canvas: obs_canvas_t *
+
+    """
+    return _obspython.obs_canvas_video_active(canvas)
 CALL_PARAM_TYPE_VOID = _obspython.CALL_PARAM_TYPE_VOID
 
 CALL_PARAM_TYPE_INT = _obspython.CALL_PARAM_TYPE_INT
@@ -18936,6 +18980,8 @@ OBS_FRONTEND_EVENT_CANVAS_ADDED = _obspython.OBS_FRONTEND_EVENT_CANVAS_ADDED
 
 OBS_FRONTEND_EVENT_CANVAS_REMOVED = _obspython.OBS_FRONTEND_EVENT_CANVAS_REMOVED
 
+OBS_FRONTEND_EVENT_REPLAY_BUFFER_SAVING = _obspython.OBS_FRONTEND_EVENT_REPLAY_BUFFER_SAVING
+
 
 def obs_frontend_streaming_start() -> "void":
     r"""obs_frontend_streaming_start()"""
@@ -19323,4 +19369,8 @@ def obs_frontend_paste_sceneitem(scene: "obs_scene_t *", duplicate: "bool") -> "
 
     """
     return _obspython.obs_frontend_paste_sceneitem(scene, duplicate)
+
+def obs_frontend_is_safe_mode_enabled() -> "bool":
+    r"""obs_frontend_is_safe_mode_enabled() -> bool"""
+    return _obspython.obs_frontend_is_safe_mode_enabled()
 
