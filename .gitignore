@@ -23,3 +23,5 @@ DesktopTicker/DTInst_*
 RadioSure/RadioSure.xml
 MuseScore/App/MuseScore/bin/MuseScore4.exe
 /OBS-Studio/core/aja/data/locale
+/OBS-Studio/core/coreaudio-encoder/data/locale
+/OBS-Studio/core/decklink/data/locale
