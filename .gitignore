@@ -35,3 +35,6 @@ OBS-Studio/core/obs-browser/libcef/.text
 /OBS-Studio/core/obs-qsv11/data/locale
 /OBS-Studio/core/obs-text/data/locale
 /OBS-Studio/core/obs-transitions/data/locale
+/OBS-Studio/core/obs-vst/data/locale
+/OBS-Studio/core/obs-webrtc/data/locale
+/OBS-Studio/core/obs-websocket/data/locale
