@@ -46,3 +46,7 @@ OBS-Studio/core/obs-browser/libcef/.text
 /OBS-Studio/core/win-dshow/data/locale
 /OBS-Studio/core/win-wasapi/data/locale
 OBS-Studio/core/obs-browser/libcef.dll
+DesktopTicker/Feeds-backup.opml
+DesktopTicker/Settings-backup.xml
+RadioSure/Stations/stations.rsdx
+DesktopTicker/Settings-backup.xml
